@@ -1,0 +1,113 @@
+[gd_scene load_steps=15 format=3 uid="uid://c4w11fhcfjs8o"]
+
+[ext_resource type="Texture2D" uid="uid://5o880q65xacx" path="res://Assets/spritesheet_7.png" id="1_d262m"]
+[ext_resource type="Script" uid="uid://b3bhm6ch5e7eu" path="res://CharacterScenes/shopkeep.gd" id="1_njm1e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eacgd"]
+atlas = ExtResource("1_d262m")
+region = Rect2(0, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njm1e"]
+atlas = ExtResource("1_d262m")
+region = Rect2(120, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dq8xf"]
+atlas = ExtResource("1_d262m")
+region = Rect2(240, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jnad"]
+atlas = ExtResource("1_d262m")
+region = Rect2(720, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utctp"]
+atlas = ExtResource("1_d262m")
+region = Rect2(840, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0dm6"]
+atlas = ExtResource("1_d262m")
+region = Rect2(960, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50nrn"]
+atlas = ExtResource("1_d262m")
+region = Rect2(240, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wru6p"]
+atlas = ExtResource("1_d262m")
+region = Rect2(360, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgs1d"]
+atlas = ExtResource("1_d262m")
+region = Rect2(480, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4s81o"]
+atlas = ExtResource("1_d262m")
+region = Rect2(600, 0, 120, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_di1sa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eacgd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njm1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dq8xf")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jnad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utctp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0dm6")
+}],
+"loop": true,
+"name": &"Sleep",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50nrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wru6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgs1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4s81o")
+}],
+"loop": true,
+"name": &"Talk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k5aeo"]
+radius = 33.0
+height = 70.0
+
+[node name="Shopkeep" type="CharacterBody2D"]
+script = ExtResource("1_njm1e")
+
+[node name="pigsprite" type="AnimatedSprite2D" parent="." groups=["ShopKeeperSprite"]]
+unique_name_in_owner = true
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_di1sa")
+animation = &"Talk"
+autoplay = "Idle"
+frame_progress = 0.991448
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_k5aeo")

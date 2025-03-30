@@ -1,0 +1,89 @@
+[gd_scene load_steps=10 format=3 uid="uid://clfkxopied47n"]
+
+[ext_resource type="Script" uid="uid://d0demg78frr3q" path="res://Script/gun.gd" id="1_yh38k"]
+[ext_resource type="Texture2D" uid="uid://ch4ll4hdeqwkp" path="res://Assets/spritesheetbirdbonefish.png" id="2_yh38k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8gg5"]
+atlas = ExtResource("2_yh38k")
+region = Rect2(360, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tft1u"]
+atlas = ExtResource("2_yh38k")
+region = Rect2(600, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ohdx"]
+atlas = ExtResource("2_yh38k")
+region = Rect2(360, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10v32"]
+atlas = ExtResource("2_yh38k")
+region = Rect2(960, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wti6"]
+atlas = ExtResource("2_yh38k")
+region = Rect2(720, 0, 120, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2lphk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8gg5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tft1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ohdx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10v32")
+}],
+"loop": true,
+"name": &"gun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wti6")
+}],
+"loop": false,
+"name": &"openmouth",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_yh38k"]
+offsets = PackedFloat32Array(0, 0.453333, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.78334, 0.886135, 1, 1, 0.876495, 0.987191, 0.985189, 1)
+
+[node name="gun" type="Node2D"]
+z_index = 10
+script = ExtResource("1_yh38k")
+
+[node name="GunSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1, 0)
+scale = Vector2(0.942173, 0.893762)
+sprite_frames = SubResource("SpriteFrames_2lphk")
+animation = &"openmouth"
+autoplay = "gun"
+offset = Vector2(107.289, 6.28571)
+flip_h = true
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(134, -1)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+preprocess = 0.37
+speed_scale = 4.23
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 5.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+angular_velocity_min = 218.18
+angular_velocity_max = 276.36
+scale_amount_min = 0.0
+scale_amount_max = 5.45
+color_initial_ramp = SubResource("Gradient_yh38k")

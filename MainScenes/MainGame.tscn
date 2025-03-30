@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bl4008rq2b8p0"]
+
+[ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="1_52se3"]
+[ext_resource type="PackedScene" uid="uid://c4w11fhcfjs8o" path="res://CharacterScenes/shopkeep.tscn" id="2_u2kmd"]
+[ext_resource type="PackedScene" uid="uid://c8d4uft5xgnb5" path="res://Interactable_Components/actionable.tscn" id="3_ldcld"]
+[ext_resource type="Resource" uid="uid://cmu0bcyq4b6q5" path="res://DialogueScenes/dialogue.dialogue" id="4_2btox"]
+
+[sub_resource type="Environment" id="Environment_52se3"]
+background_mode = 3
+ambient_light_color = Color(0.235977, 0.600264, 0.440154, 1)
+ambient_light_energy = 9.7
+ssr_fade_in = 3.766
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.01
+glow_strength = 2.0
+glow_hdr_threshold = 1.46
+glow_hdr_scale = 1.42
+glow_hdr_luminance_cap = 256.0
+glow_map_strength = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yeuv3"]
+radius = 92.0
+
+[node name="Main" type="Node2D"]
+
+[node name="MainCharacter" parent="." instance=ExtResource("1_52se3")]
+position = Vector2(439, 242)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_52se3")
+
+[node name="Shopkeep" parent="." instance=ExtResource("2_u2kmd")]
+position = Vector2(791, 247)
+collision_mask = 3
+
+[node name="Actionable" parent="Shopkeep" instance=ExtResource("3_ldcld")]
+dialogue_resource = ExtResource("4_2btox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shopkeep/Actionable"]
+position = Vector2(-1, -15)
+shape = SubResource("CircleShape2D_yeuv3")

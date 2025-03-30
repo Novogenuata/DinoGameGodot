@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://b76hh65ylr506"]
+
+[ext_resource type="Script" uid="uid://bs36xuo3qgcpi" path="res://Script/bullet.gd" id="1_1xa6q"]
+[ext_resource type="Texture2D" uid="uid://ch4ll4hdeqwkp" path="res://Assets/spritesheetbirdbonefish.png" id="2_1xa6q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7w0ai"]
+atlas = ExtResource("2_1xa6q")
+region = Rect2(480, 0, 120, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rymca"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7w0ai")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xa6q"]
+size = Vector2(16, 3)
+
+[node name="Bullet" type="Area2D"]
+z_index = 10
+collision_mask = 0
+script = ExtResource("1_1xa6q")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-9.53674e-07, 0)
+scale = Vector2(0.521667, 0.527333)
+sprite_frames = SubResource("SpriteFrames_rymca")
+offset = Vector2(20, 10.5946)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+rotation = -0.556101
+shape = SubResource("RectangleShape2D_1xa6q")
