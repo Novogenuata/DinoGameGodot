@@ -1,5 +1,8 @@
 ~ start
-%50 The Bandit:  who are you?
-%49 The Bandit:  Welcome, Traveller!
-%1 The Bandit:  Shall I interest you in any pork?
+
+%25 Shopkeep:  Welcome, Traveller!
+%25 Shopkeep:  Shall I interest you in any[shake rate=500 level=100] pork?[/shake]
+%25 Shopkeep: My pork is the best in the world!
+%25 Shopkeep: [shake rate=20 level=10]Don't ask me where I get my pork from.[/shake]
+
 => END!

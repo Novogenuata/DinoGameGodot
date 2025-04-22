@@ -1,0 +1,110 @@
+[gd_scene load_steps=16 format=3 uid="uid://i3vry1botv1y"]
+
+[ext_resource type="Texture2D" uid="uid://ck5e73ewd2nti" path="res://Assets/fishsheet.png" id="1_ce1ax"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yxw1"]
+atlas = ExtResource("1_ce1ax")
+region = Rect2(0, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3a6v"]
+atlas = ExtResource("1_ce1ax")
+region = Rect2(120, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t034n"]
+atlas = ExtResource("1_ce1ax")
+region = Rect2(240, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dfvc"]
+atlas = ExtResource("1_ce1ax")
+region = Rect2(360, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgw11"]
+atlas = ExtResource("1_ce1ax")
+region = Rect2(480, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1dhr"]
+atlas = ExtResource("1_ce1ax")
+region = Rect2(600, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnu1w"]
+atlas = ExtResource("1_ce1ax")
+region = Rect2(840, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyc8s"]
+atlas = ExtResource("1_ce1ax")
+region = Rect2(720, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_op8fa"]
+atlas = ExtResource("1_ce1ax")
+region = Rect2(960, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8a1mw"]
+atlas = ExtResource("1_ce1ax")
+region = Rect2(1080, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2ewe"]
+atlas = ExtResource("1_ce1ax")
+region = Rect2(1200, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iiip"]
+atlas = ExtResource("1_ce1ax")
+region = Rect2(1320, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fripo"]
+atlas = ExtResource("1_ce1ax")
+region = Rect2(1440, 0, 120, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xma1p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yxw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3a6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t034n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dfvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgw11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1dhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnu1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wyc8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_op8fa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8a1mw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2ewe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1iiip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fripo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="fish" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_xma1p")
+autoplay = "default"
+frame_progress = 0.426772

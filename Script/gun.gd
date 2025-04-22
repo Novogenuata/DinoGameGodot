@@ -11,12 +11,12 @@ const bullet = preload("res://CharacterScenes/bullet.tscn")
 @onready var muzzle = $Muzzle
 @onready var gun_sprite = $GunSprite  
 @onready var muzzle_flash = $CPUParticles2D  
-@onready var gun_animation = $GunSprite  # Assuming GunSprite is an AnimatedSprite2D
+@onready var gun_animation = $GunSprite 
 
 var time_passed = 0.0
 var original_position  
 var original_rotation  
-var is_shooting = false  # Flag to track if shooting is happening
+var is_shooting = false 
 
 func _ready():
 	original_position = gun_sprite.position  
