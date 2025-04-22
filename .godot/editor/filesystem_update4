@@ -1,2 +1,4 @@
 res://Script/gun.gd
 res://MainScenes/MainGame.tscn
+res://MainScenes/main_menu.tscn
+res://MainScenes/main_menu.gd
