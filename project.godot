@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Dinosaur Game"
+run/main_scene="uid://rcoc25ejffhv"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
@@ -26,6 +27,10 @@ movie_writer/movie_file="C:/Users/11hap/OneDrive/Documents/dinosaur-game/movies/
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
+
+[global_group]
+
+player=""
 
 [input]
 
