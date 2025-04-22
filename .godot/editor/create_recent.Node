@@ -1,8 +1,12 @@
+Button
+TextureRect
+VBoxContainer
+HBoxContainer
+HScrollBar
+Label
 MarginContainer
 CanvasLayer
 Area2D
-Button
 HSeparator
-VBoxContainer
 Control
 Sprite2D
