@@ -1,3 +1,51 @@
-[gd_scene format=3 uid="uid://rcoc25ejffhv"]
+[gd_scene load_steps=3 format=3 uid="uid://rcoc25ejffhv"]
 
-[node name="MainMenu" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://ualtilpq12ea" path="res://Assets/Background/DinoGameBackground.jpeg" id="1_oepce"]
+[ext_resource type="Script" uid="uid://fsq53xpecaly" path="res://MainScenes/main_menu.gd" id="1_rqe8y"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rqe8y")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="background" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(602, 331)
+scale = Vector2(1.25694, 1.21142)
+texture = ExtResource("1_oepce")
+
+[node name="elements" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_right = 41.0
+offset_bottom = 15.5
+grow_vertical = 2
+size_flags_horizontal = 0
+
+[node name="buttons" type="VBoxContainer" parent="CanvasLayer/elements"]
+layout_mode = 2
+
+[node name="play" type="Button" parent="CanvasLayer/elements/buttons"]
+layout_mode = 2
+text = "Play"
+
+[node name="exit" type="Button" parent="CanvasLayer/elements/buttons"]
+layout_mode = 2
+text = "Quit"
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/elements/buttons"]
+layout_mode = 2
+
+[node name="english" type="Button" parent="CanvasLayer/elements/buttons"]
+layout_mode = 2
+text = "English"
+
+[node name="french" type="Button" parent="CanvasLayer/elements/buttons"]
+layout_mode = 2
+text = "French"
+
+[connection signal="pressed" from="CanvasLayer/elements/buttons/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/elements/buttons/exit" to="." method="_on_exit_pressed"]
