@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://rcoc25ejffhv"]
+[gd_scene load_steps=4 format=3 uid="uid://rcoc25ejffhv"]
 
-[ext_resource type="Texture2D" uid="uid://ualtilpq12ea" path="res://Assets/Background/DinoGameBackground.jpeg" id="1_oepce"]
-[ext_resource type="Script" uid="uid://fsq53xpecaly" path="res://MainScenes/main_menu.gd" id="1_rqe8y"]
+[ext_resource type="Script" uid="uid://fsq53xpecaly" path="res://Script/main_menu.gd" id="1_rqe8y"]
+[ext_resource type="Texture2D" uid="uid://c51i808o31cpe" path="res://Assets/Background/maimenubackground.png" id="2_rqe8y"]
+[ext_resource type="Theme" uid="uid://ct3gsjqfkb4hm" path="res://Assets/themes/vintagetheme.tres" id="3_qnbo1"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,22 +12,26 @@ script = ExtResource("1_rqe8y")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="background" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(602, 331)
-scale = Vector2(1.25694, 1.21142)
-texture = ExtResource("1_oepce")
+position = Vector2(575, 335.5)
+scale = Vector2(0.527778, 0.40679)
+texture = ExtResource("2_rqe8y")
 
 [node name="elements" type="MarginContainer" parent="CanvasLayer"]
-anchors_preset = 4
+anchors_preset = 14
 anchor_top = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -15.5
-offset_right = 41.0
-offset_bottom = 15.5
+offset_top = -129.5
+offset_bottom = 129.5
+grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="buttons" type="VBoxContainer" parent="CanvasLayer/elements"]
 layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_qnbo1")
 
 [node name="play" type="Button" parent="CanvasLayer/elements/buttons"]
 layout_mode = 2

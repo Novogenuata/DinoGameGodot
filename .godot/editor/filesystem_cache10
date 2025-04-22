@@ -99,7 +99,7 @@ radial.png::CompressedTexture2D::8229525683377610162::1745330304::1745330305::1:
 scribbles.png::CompressedTexture2D::2812175283927716421::1745330304::1745330305::1::::<><><>0<>0<>93b3a9fb9e83b1bf93af6d541bad810e<>res://.godot/imported/scribbles.png-430a0f7331a442eb053961f8e9bb82f0.s3tc.ctex::
 squares.png::CompressedTexture2D::4484147373352580222::1745330304::1745330305::1::::<><><>0<>0<>c4a9833846430f54ada5431e93bb2f5e<>res://.godot/imported/squares.png-a8c8144d665aa3e0d712474304ad6e6f.s3tc.ctex::
 vertical.png::CompressedTexture2D::6321667921096867211::1745330304::1745330305::1::::<><><>0<>0<>c03c0a83a889f603bb412cb3a6dbf923<>res://.godot/imported/vertical.png-5d237b9ea3cdd66e653ef032da0bd507.s3tc.ctex::
-::res://Assets/::1745329189
+::res://Assets/::1745343341
 BirdSpriteIdle.png::CompressedTexture2D::5001869681060822613::1744914643::1745329057::1::::<><><>0<>0<>77336e579f3e17577973b53b8a57f082<>res://.godot/imported/BirdSpriteIdle.png-d095a312c41ccd5e47092de59a74288e.ctex::
 BirdSpriteWalk.png::CompressedTexture2D::1767614046280570327::1744914643::1745329057::1::::<><><>0<>0<>17bed2e7c60c447cdb3c0b66c20e1b26<>res://.godot/imported/BirdSpriteWalk.png-3c00a3c3b001f87b2967e33d2d3f0c0a.ctex::
 bulletplacholder.png::CompressedTexture2D::4616833075942722285::1744914643::1745329057::1::::<><><>0<>0<>2a776070383ddba511f3c6da9ab3432e<>res://.godot/imported/bulletplacholder.png-c601514a8c4c83dc7d0af4b2a7fddbe3.ctex::
@@ -109,18 +109,23 @@ gunpng2.png::CompressedTexture2D::5727843811437924023::1744914643::1745329057::1
 png gun placeholder.png::CompressedTexture2D::6768994530615441819::1744914643::1745329057::1::::<><><>0<>0<>eab76af2b2a5f7d9780ef249dcf4480d<>res://.godot/imported/png gun placeholder.png-1c5622449f2eb46055ba61b97f84007d.ctex::
 spritesheetbirdbonefish.png::CompressedTexture2D::5324719292506638619::1744914643::1745329057::1::::<><><>0<>0<>e6683131d636a5c75fb55ec08e3a0325<>res://.godot/imported/spritesheetbirdbonefish.png-6df3543d14307a7ed141ad1ee5c99464.ctex::
 spritesheet_7.png::CompressedTexture2D::2136630528908079827::1744914643::1745329057::1::::<><><>0<>0<>28f0895dc7a61224d55c66820fe2cc7a<>res://.godot/imported/spritesheet_7.png-765b6e63d54761ea9d5f7b71c9ffc407.ctex::
-::res://Assets/Background/::1745336355
+::res://Assets/Background/::1745337744
 DinoGameBackground.jpeg::CompressedTexture2D::1404479127648887524::1745329179::1745329189::1::::<><><>0<>0<>36a44ff79d1bf36448075265a4534e41<>res://.godot/imported/DinoGameBackground.jpeg-59a173618cf4eed37aa09b779a008cd7.ctex::
 maimenubackground.png::CompressedTexture2D::6932726530010558490::1745336355::1745337744::1::::<><><>0<>0<>4916bc5bb654dc18c3edaba79821b561<>res://.godot/imported/maimenubackground.png-99423b2c3e29fa71a4f8799a0c20748a.ctex::
+::res://Assets/fonts/::1745343292
+EagleHorizonP.ttf::FontFile::7780146887696317858::1745343266::1745343284::1::::<><><>0<>0<>39b14e87d3d2b8942c3b71611126ec53<>res://.godot/imported/EagleHorizonP.ttf-9e5702e71bbd30adfc41e412e52fbc66.fontdata::
+READ ME.txt::TextFile::-1::1745343267::0::1::::<><><>0<>0<><>::
 ::res://Assets/movies/::1745329231
-::res://CharacterScenes/::1744914643
+::res://Assets/themes/::1745343370
+vintagetheme.tres::Theme::6164628917537013558::1745343343::0::1::::<><><>0<>0<><>::uid://di305ahu5i0r3::::res://Assets/fonts/EagleHorizonP.ttf
+::res://CharacterScenes/::1745343486
 bullet.tscn::PackedScene::4696898585666530465::1744914643::0::1::::<><><>0<>0<><>::uid://bs36xuo3qgcpi::::res://Script/bullet.gd<>uid://ch4ll4hdeqwkp::::res://Assets/spritesheetbirdbonefish.png
 gun.tscn::PackedScene::5555889538230283993::1744914643::0::1::::<><><>0<>0<><>::uid://d0demg78frr3q::::res://Script/gun.gd<>uid://ch4ll4hdeqwkp::::res://Assets/spritesheetbirdbonefish.png
 main_character.tscn::PackedScene::520358947078189735::1744914643::0::1::::<><><>0<>0<><>::uid://bttx1yaxqg6jd::::res://Script/main_character.gd<>uid://cdi7cew3pjrn6::::res://Assets/BirdSpriteIdle.png<>uid://0gily6o8t4yl::::res://Assets/BirdSpriteWalk.png<>uid://ch4ll4hdeqwkp::::res://Assets/spritesheetbirdbonefish.png<>uid://clfkxopied47n::::res://CharacterScenes/gun.tscn
 shopkeep.gd::GDScript::4354220763460087292::1744914643::0::1::::<>CharacterBody2D<><>0<>0<><>::
-shopkeep.tscn::PackedScene::6855359489460221520::1744914643::0::1::::<><><>0<>0<><>::uid://5o880q65xacx::::res://Assets/spritesheet_7.png<>uid://b3bhm6ch5e7eu::::res://CharacterScenes/shopkeep.gd
-::res://DialogueScenes/::1745329189
-dialogue.dialogue::Resource::5657914899624655250::1745329179::1745329189::1::::<><><>0<>0<>aac1dd1a82ee080e6cfcdc2762ee419c<>res://.godot/imported/dialogue.dialogue-5ed3d69cabaf3a6c26463783c7ddd629.tres::uid://dbs4435dsf3ry::::res://addons/dialogue_manager/dialogue_resource.gd
+shopkeep.tscn::PackedScene::6855359489460221520::1745343486::0::1::::<><><>0<>0<><>::uid://5o880q65xacx::::res://Assets/spritesheet_7.png<>uid://b3bhm6ch5e7eu::::res://CharacterScenes/shopkeep.gd
+::res://DialogueScenes/::1745343486
+dialogue.dialogue::Resource::5657914899624655250::1745343478::1745343486::1::::<><><>0<>0<>aac1dd1a82ee080e6cfcdc2762ee419c<>res://.godot/imported/dialogue.dialogue-5ed3d69cabaf3a6c26463783c7ddd629.tres::uid://dbs4435dsf3ry::::res://addons/dialogue_manager/dialogue_resource.gd
 ::res://Interactable_Components/::1744914643
 actionable.gd::GDScript::7722906492116233187::1744914643::0::1::::<>Area2D<><>0<>0<><>::
 actionable.tscn::PackedScene::7097063142733859476::1744914643::0::1::::<><><>0<>0<><>::uid://dibbe2xhxmmnj::::res://Interactable_Components/actionable.gd
@@ -128,12 +133,12 @@ interactable.gd::GDScript::5311189849196900118::1744914643::0::1::::<>Area2D<><>
 interactable.tscn::PackedScene::6259820409969413990::1744914643::0::1::::<><><>0<>0<><>::uid://chw1rydfsujrq::::res://Interactable_Components/interactable.gd
 interacting_component.gd::GDScript::7721379762658397401::1744914643::0::1::::<>Node2D<><>0<>0<><>::
 interacting_component.tscn::PackedScene::4239568975998298397::1744914643::0::1::::<><><>0<>0<><>::uid://diaj85byd8jb2::::res://Interactable_Components/interacting_component.gd
-::res://MainScenes/::1745336245
+::res://MainScenes/::1745343598
 fish.tscn::PackedScene::-1::1745329189::0::1::::<><><>0<>0<><>::
 MainGame.gdshader::Shader::-1::1745329179::0::1::::<><><>0<>0<><>::
-MainGame.tscn::PackedScene::3219929248541330451::1745330484::0::1::::<><><>0<>0<><>::uid://hociavgdvmp8::::res://CharacterScenes/main_character.tscn<>uid://c4w11fhcfjs8o::::res://CharacterScenes/shopkeep.tscn<>uid://c8d4uft5xgnb5::::res://Interactable_Components/actionable.tscn<>uid://cmu0bcyq4b6q5::::res://DialogueScenes/dialogue.dialogue<>res://new_shader.gdshader<>uid://c2utv5mnf5djj::::res://icon.svg<>uid://ualtilpq12ea::::res://Assets/Background/DinoGameBackground.jpeg<>res://MainScenes/fish.tscn
-main_menu.tscn::PackedScene::1198194171509768015::1745336245::0::1::::<><><>0<>0<><>::uid://ualtilpq12ea::::res://Assets/Background/DinoGameBackground.jpeg<>uid://fsq53xpecaly::::res://MainScenes/main_menu.gd
-main_menu.gd::GDScript::389129570335909502::1745336212::0::1::::<>Control<><>0<>0<><>::
+MainGame.tscn::PackedScene::3219929248541330451::1745343486::0::1::::<><><>0<>0<><>::uid://hociavgdvmp8::::res://CharacterScenes/main_character.tscn<>uid://c4w11fhcfjs8o::::res://CharacterScenes/shopkeep.tscn<>uid://c8d4uft5xgnb5::::res://Interactable_Components/actionable.tscn<>uid://cmu0bcyq4b6q5::::res://DialogueScenes/dialogue.dialogue<>res://new_shader.gdshader<>uid://c2utv5mnf5djj::::res://icon.svg<>uid://ualtilpq12ea::::res://Assets/Background/DinoGameBackground.jpeg<>res://MainScenes/fish.tscn
+main_menu.tscn::PackedScene::1198194171509768015::1745343865::0::1::::<><><>0<>0<><>::uid://fsq53xpecaly::::res://MainScenes/main_menu.gd<>uid://c51i808o31cpe::::res://Assets/Background/maimenubackground.png<>uid://ct3gsjqfkb4hm::::res://Assets/themes/vintagetheme.tres
+main_menu.gd::GDScript::389129570335909502::1745337820::0::1::::<>Control<><>0<>0<><>::
 ::res://movies/::1744914643
 ::res://Script/::1745329179
 bullet.gd::GDScript::3709546819715007294::1744914643::0::1::::<>Node2D<><>0<>0<><>::
