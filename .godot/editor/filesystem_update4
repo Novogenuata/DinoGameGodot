@@ -6,3 +6,4 @@ res://CharacterScenes/shopkeep.tscn
 res://MainScenes/settings_menu.tscn
 res://addons/scene_manager/SceneManager.gd
 res://Script/settings_menu.gd
+res://Script/main_menu.gd

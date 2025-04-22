@@ -15,5 +15,5 @@ func _on_exit_pressed() -> void:
 
 func _on_settings_pressed() -> void:
 	#change to settings menu
-	
+	SceneManager.change_scene("res://MainScenes/settings_menu.tscn")
 	pass # Replace with function body.

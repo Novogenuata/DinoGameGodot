@@ -37,6 +37,11 @@ size_flags_vertical = 4
 layout_mode = 2
 theme = ExtResource("2_w1clh")
 
+[node name="soundsettingslabel" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Sound Settings"
+
 [node name="Master" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
@@ -81,3 +86,4 @@ text = "Save Settings"
 [connection signal="value_changed" from="CanvasLayer/MarginContainer/VBoxContainer/Master/masterslider" to="." method="_on_masterslider_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/MarginContainer/VBoxContainer/Music/musicslider" to="." method="_on_musicslider_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/MarginContainer/VBoxContainer/soundeffects/sfxslider" to="." method="_on_sfxslider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/savebutton" to="." method="_on_savebutton_pressed"]

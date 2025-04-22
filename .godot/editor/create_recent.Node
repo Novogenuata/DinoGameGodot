@@ -1,9 +1,9 @@
+Label
 Button
 TextureRect
 VBoxContainer
 HBoxContainer
 HScrollBar
-Label
 MarginContainer
 CanvasLayer
 Area2D
