@@ -32,6 +32,11 @@ layout_mode = 2
 layout_mode = 2
 text = "Play"
 
+[node name="settings" type="Button" parent="CanvasLayer/elements/buttons"]
+layout_mode = 2
+text = "Settings
+"
+
 [node name="exit" type="Button" parent="CanvasLayer/elements/buttons"]
 layout_mode = 2
 text = "Quit"
@@ -48,4 +53,5 @@ layout_mode = 2
 text = "French"
 
 [connection signal="pressed" from="CanvasLayer/elements/buttons/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/elements/buttons/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/elements/buttons/exit" to="." method="_on_exit_pressed"]
