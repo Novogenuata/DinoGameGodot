@@ -7,3 +7,4 @@ res://MainScenes/settings_menu.tscn
 res://addons/scene_manager/SceneManager.gd
 res://Script/settings_menu.gd
 res://Script/main_menu.gd
+res://Script/main_character.gd

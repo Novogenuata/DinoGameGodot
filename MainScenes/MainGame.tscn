@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bl4008rq2b8p0"]
+[gd_scene load_steps=13 format=3 uid="uid://bl4008rq2b8p0"]
 
 [ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="1_52se3"]
 [ext_resource type="PackedScene" uid="uid://c4w11fhcfjs8o" path="res://CharacterScenes/shopkeep.tscn" id="2_u2kmd"]
@@ -31,6 +31,9 @@ glow_map_strength = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yeuv3"]
 radius = 92.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3wtxv"]
+radius = 70.0
 
 [node name="Main" type="Node2D"]
 
@@ -83,4 +86,10 @@ position = Vector2(540, 1064)
 rotation = 3.14159
 scale = Vector2(3.2, 3.16)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="SecretGate" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecretGate"]
+position = Vector2(488, 1112)
+shape = SubResource("CircleShape2D_3wtxv")
+
+[connection signal="body_entered" from="SecretGate" to="MainCharacter" method="_on_secret_gate_body_entered"]

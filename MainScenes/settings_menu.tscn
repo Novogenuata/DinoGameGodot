@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://da2364813n5fa"]
 
-[ext_resource type="Texture2D" uid="uid://ualtilpq12ea" path="res://Assets/Background/DinoGameBackground.jpeg" id="1_fcum5"]
 [ext_resource type="Script" uid="uid://dhhkak0cg284e" path="res://Script/settings_menu.gd" id="1_v42f0"]
+[ext_resource type="Texture2D" uid="uid://c51i808o31cpe" path="res://Assets/Background/maimenubackground.png" id="2_v42f0"]
 [ext_resource type="Theme" uid="uid://ct3gsjqfkb4hm" path="res://Assets/themes/vintagetheme.tres" id="2_w1clh"]
 
 [node name="settingsMenu" type="Control"]
@@ -15,9 +15,9 @@ script = ExtResource("1_v42f0")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1158.0
-offset_bottom = 638.0
-texture = ExtResource("1_fcum5")
+offset_right = 1169.0
+offset_bottom = 654.0
+texture = ExtResource("2_v42f0")
 expand_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -35,6 +35,7 @@ size_flags_vertical = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("2_w1clh")
 
 [node name="soundsettingslabel" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer"]
