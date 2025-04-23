@@ -9,3 +9,5 @@ res://Script/settings_menu.gd
 res://Script/main_menu.gd
 res://Script/main_character.gd
 res://MainScenes/water_scene.tscn
+res://Interactable_Components/interacting_component.tscn
+res://Script/water_scene.gd

@@ -1,22 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://ysngkd6bb7yx"]
+[gd_scene load_steps=6 format=3 uid="uid://ysngkd6bb7yx"]
+
+[ext_resource type="Script" uid="uid://daucxt0wkexko" path="res://Script/water_scene.gd" id="1_o43j3"]
+[ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="1_wib7b"]
+[ext_resource type="Texture2D" uid="uid://ualtilpq12ea" path="res://Assets/Background/DinoGameBackground.jpeg" id="2_ixydh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_unjqi"]
-radius = 30.5287
+radius = 68.1836
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wib7b"]
 
 [node name="WaterScene" type="Node2D"]
+script = ExtResource("1_o43j3")
 
 [node name="background" type="Sprite2D" parent="."]
+position = Vector2(553.5, 273)
+scale = Vector2(1.96094, 1.84259)
+texture = ExtResource("2_ixydh")
 
 [node name="exitgate" type="Area2D" parent="."]
+position = Vector2(374, 239)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exitgate"]
+position = Vector2(-3, 5)
 shape = SubResource("CircleShape2D_unjqi")
 
 [node name="gun" type="Area2D" parent="."]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="gun"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gun"]
 shape = SubResource("RectangleShape2D_wib7b")
+
+[node name="MainCharacter" parent="." groups=["player"] instance=ExtResource("1_wib7b")]
+
+[connection signal="body_entered" from="exitgate" to="." method="_on_exitgate_body_entered"]
