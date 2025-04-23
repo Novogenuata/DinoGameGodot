@@ -1,4 +1,6 @@
 CollisionShape2D
+Sprite2D
+Area2D
 Label
 Button
 TextureRect
@@ -7,7 +9,5 @@ HBoxContainer
 HScrollBar
 MarginContainer
 CanvasLayer
-Area2D
 HSeparator
 Control
-Sprite2D

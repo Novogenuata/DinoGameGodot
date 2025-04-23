@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://ysngkd6bb7yx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_unjqi"]
+radius = 30.5287
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wib7b"]
+
+[node name="WaterScene" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+
+[node name="exitgate" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exitgate"]
+shape = SubResource("CircleShape2D_unjqi")
+
+[node name="gun" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="gun"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gun"]
+shape = SubResource("RectangleShape2D_wib7b")
