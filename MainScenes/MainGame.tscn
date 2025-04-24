@@ -72,6 +72,11 @@ modulate = Color(1, 1, 1, 0.486275)
 position = Vector2(358, 1174)
 scale = Vector2(3.2, 3.16)
 
+[node name="fish3" parent="Fishes" instance=ExtResource("8_3wtxv")]
+modulate = Color(1, 1, 1, 0.486275)
+position = Vector2(358, 1174)
+scale = Vector2(3.2, 3.16)
+
 [node name="fish2" parent="Fishes" instance=ExtResource("8_3wtxv")]
 modulate = Color(1, 0.803922, 0.584314, 0.486275)
 position = Vector2(553, 1167)
