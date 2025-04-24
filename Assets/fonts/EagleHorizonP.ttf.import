@@ -3,11 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://di305ahu5i0r3"
-valid=false
+path="res://.godot/imported/EagleHorizonP.ttf-9e5702e71bbd30adfc41e412e52fbc66.fontdata"
 
 [deps]
 
 source_file="res://Assets/fonts/EagleHorizonP.ttf"
+dest_files=["res://.godot/imported/EagleHorizonP.ttf-9e5702e71bbd30adfc41e412e52fbc66.fontdata"]
 
 [params]
 

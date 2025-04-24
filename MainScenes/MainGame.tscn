@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://bl4008rq2b8p0"]
+[gd_scene load_steps=13 format=3 uid="uid://bl4008rq2b8p0"]
 
 [ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="1_52se3"]
 [ext_resource type="PackedScene" uid="uid://c4w11fhcfjs8o" path="res://CharacterScenes/shopkeep.tscn" id="2_u2kmd"]
 [ext_resource type="PackedScene" uid="uid://c8d4uft5xgnb5" path="res://Interactable_Components/actionable.tscn" id="3_ldcld"]
 [ext_resource type="Resource" uid="uid://cmu0bcyq4b6q5" path="res://DialogueScenes/dialogue.dialogue" id="4_2btox"]
-[ext_resource type="Shader" path="res://new_shader.gdshader" id="5_yeuv3"]
+[ext_resource type="Shader" uid="uid://si0hmnhjaio8" path="res://new_shader.gdshader" id="5_yeuv3"]
 [ext_resource type="Texture2D" uid="uid://c2utv5mnf5djj" path="res://icon.svg" id="6_k4tsb"]
-[ext_resource type="PackedScene" path="res://MainScenes/fish.tscn" id="8_3wtxv"]
+[ext_resource type="PackedScene" uid="uid://i3vry1botv1y" path="res://MainScenes/fish.tscn" id="8_3wtxv"]
+[ext_resource type="Texture2D" uid="uid://cq03ficbe46wa" path="res://Assets/Background/backgroundincreaseddpi.png" id="8_x6swf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yeuv3"]
 shader = ExtResource("5_yeuv3")
@@ -82,5 +83,11 @@ scale = Vector2(3.2, 3.16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SecretGate"]
 position = Vector2(488, 1112)
 shape = SubResource("CircleShape2D_3wtxv")
+
+[node name="Backgroundincreaseddpi" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(1083, 719.5)
+scale = Vector2(1.87674, 2.25463)
+texture = ExtResource("8_x6swf")
 
 [connection signal="body_entered" from="SecretGate" to="MainCharacter" method="_on_secret_gate_body_entered"]
