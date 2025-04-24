@@ -1,13 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://bl4008rq2b8p0"]
+[gd_scene load_steps=13 format=3 uid="uid://bl4008rq2b8p0"]
 
 [ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="1_52se3"]
 [ext_resource type="PackedScene" uid="uid://c4w11fhcfjs8o" path="res://CharacterScenes/shopkeep.tscn" id="2_u2kmd"]
 [ext_resource type="PackedScene" uid="uid://c8d4uft5xgnb5" path="res://Interactable_Components/actionable.tscn" id="3_ldcld"]
 [ext_resource type="Resource" uid="uid://cmu0bcyq4b6q5" path="res://DialogueScenes/dialogue.dialogue" id="4_2btox"]
-[ext_resource type="Shader" uid="uid://si0hmnhjaio8" path="res://new_shader.gdshader" id="5_yeuv3"]
+[ext_resource type="Shader" path="res://new_shader.gdshader" id="5_yeuv3"]
 [ext_resource type="Texture2D" uid="uid://c2utv5mnf5djj" path="res://icon.svg" id="6_k4tsb"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://i3vry1botv1y" path="res://MainScenes/fish.tscn" id="8_3wtxv"]
 [ext_resource type="Texture2D" uid="uid://cq03ficbe46wa" path="res://Assets/Background/backgroundincreaseddpi.png" id="8_x6swf"]
+=======
+[ext_resource type="Texture2D" uid="uid://ualtilpq12ea" path="res://Assets/Background/DinoGameBackground.jpeg" id="7_k4tsb"]
+[ext_resource type="PackedScene" path="res://MainScenes/fish.tscn" id="8_3wtxv"]
+>>>>>>> 1bc54c8d5a41a2acfc26f7ceb760334c2abcbcd0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yeuv3"]
 shader = ExtResource("5_yeuv3")
@@ -32,6 +37,9 @@ glow_map_strength = 0.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_yeuv3"]
 radius = 92.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3wtxv"]
+radius = 70.0
+
 [node name="Main" type="Node2D"]
 
 [node name="Icon" type="Sprite2D" parent="."]
@@ -43,7 +51,7 @@ position = Vector2(1184.5, 689.5)
 scale = Vector2(18.4453, 10.9922)
 texture = ExtResource("6_k4tsb")
 
-[node name="MainCharacter" parent="." instance=ExtResource("1_52se3")]
+[node name="MainCharacter" parent="." groups=["player"] instance=ExtResource("1_52se3")]
 position = Vector2(573, 314)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -75,9 +83,19 @@ position = Vector2(553, 1167)
 rotation = 3.14159
 scale = Vector2(3.2, 3.16)
 
+<<<<<<< HEAD
 [node name="Backgroundincreaseddpi" type="Sprite2D" parent="."]
 z_index = -2
 texture_filter = 1
 position = Vector2(1182.5, 721)
 scale = Vector2(2.05816, 2.24074)
 texture = ExtResource("8_x6swf")
+=======
+[node name="SecretGate" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecretGate"]
+position = Vector2(488, 1112)
+shape = SubResource("CircleShape2D_3wtxv")
+
+[connection signal="body_entered" from="SecretGate" to="MainCharacter" method="_on_secret_gate_body_entered"]
+>>>>>>> 1bc54c8d5a41a2acfc26f7ceb760334c2abcbcd0

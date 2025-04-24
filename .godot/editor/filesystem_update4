@@ -1,0 +1,13 @@
+res://Script/gun.gd
+res://MainScenes/MainGame.tscn
+res://MainScenes/main_menu.tscn
+res://MainScenes/main_menu.gd
+res://CharacterScenes/shopkeep.tscn
+res://MainScenes/settings_menu.tscn
+res://addons/scene_manager/SceneManager.gd
+res://Script/settings_menu.gd
+res://Script/main_menu.gd
+res://Script/main_character.gd
+res://MainScenes/water_scene.tscn
+res://Interactable_Components/interacting_component.tscn
+res://Script/water_scene.gd

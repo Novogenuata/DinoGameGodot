@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=3 uid="uid://da2364813n5fa"]
+
+[ext_resource type="Script" uid="uid://dhhkak0cg284e" path="res://Script/settings_menu.gd" id="1_v42f0"]
+[ext_resource type="Texture2D" uid="uid://c51i808o31cpe" path="res://Assets/Background/maimenubackground.png" id="2_v42f0"]
+[ext_resource type="Theme" uid="uid://ct3gsjqfkb4hm" path="res://Assets/themes/vintagetheme.tres" id="2_w1clh"]
+
+[node name="settingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v42f0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1169.0
+offset_bottom = 654.0
+texture = ExtResource("2_v42f0")
+expand_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -62.5
+offset_bottom = 62.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_w1clh")
+
+[node name="soundsettingslabel" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Sound Settings"
+
+[node name="Master" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Master" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/Master"]
+layout_mode = 2
+text = "Master"
+
+[node name="masterslider" type="HScrollBar" parent="CanvasLayer/MarginContainer/VBoxContainer/Master" groups=["scene_manager_entity_nodes"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Music" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Music" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/Music"]
+layout_mode = 2
+text = "Music"
+
+[node name="musicslider" type="HScrollBar" parent="CanvasLayer/MarginContainer/VBoxContainer/Music"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="soundeffects" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SFX" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/soundeffects"]
+layout_mode = 2
+text = "Music"
+
+[node name="sfxslider" type="HScrollBar" parent="CanvasLayer/MarginContainer/VBoxContainer/soundeffects"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="savebutton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Save Settings"
+
+[connection signal="value_changed" from="CanvasLayer/MarginContainer/VBoxContainer/Master/masterslider" to="." method="_on_masterslider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/MarginContainer/VBoxContainer/Music/musicslider" to="." method="_on_musicslider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/MarginContainer/VBoxContainer/soundeffects/sfxslider" to="." method="_on_sfxslider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/savebutton" to="." method="_on_savebutton_pressed"]

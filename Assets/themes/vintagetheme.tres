@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ct3gsjqfkb4hm"]
+
+[ext_resource type="FontFile" uid="uid://di305ahu5i0r3" path="res://Assets/fonts/EagleHorizonP.ttf" id="1_wktjs"]
+
+[resource]
+default_font = ExtResource("1_wktjs")
+default_font_size = 20

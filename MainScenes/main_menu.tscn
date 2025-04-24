@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://rcoc25ejffhv"]
+
+[ext_resource type="Script" uid="uid://fsq53xpecaly" path="res://Script/main_menu.gd" id="1_rqe8y"]
+[ext_resource type="Texture2D" uid="uid://c51i808o31cpe" path="res://Assets/Background/maimenubackground.png" id="2_rqe8y"]
+[ext_resource type="Theme" uid="uid://ct3gsjqfkb4hm" path="res://Assets/themes/vintagetheme.tres" id="3_qnbo1"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rqe8y")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="background" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(575, 335.5)
+scale = Vector2(0.527778, 0.40679)
+texture = ExtResource("2_rqe8y")
+
+[node name="elements" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -129.5
+offset_bottom = 129.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="buttons" type="VBoxContainer" parent="CanvasLayer/elements"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_qnbo1")
+
+[node name="play" type="Button" parent="CanvasLayer/elements/buttons"]
+layout_mode = 2
+text = "Play"
+
+[node name="settings" type="Button" parent="CanvasLayer/elements/buttons"]
+layout_mode = 2
+text = "Settings
+"
+
+[node name="exit" type="Button" parent="CanvasLayer/elements/buttons"]
+layout_mode = 2
+text = "Quit"
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/elements/buttons"]
+layout_mode = 2
+
+[node name="english" type="Button" parent="CanvasLayer/elements/buttons"]
+layout_mode = 2
+text = "English"
+
+[node name="french" type="Button" parent="CanvasLayer/elements/buttons"]
+layout_mode = 2
+text = "French"
+
+[connection signal="pressed" from="CanvasLayer/elements/buttons/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/elements/buttons/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/elements/buttons/exit" to="." method="_on_exit_pressed"]
