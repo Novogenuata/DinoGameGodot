@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Dinosaur Game"
-run/main_scene="uid://rcoc25ejffhv"
+run/main_scene="uid://domf0yrtfc88b"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
