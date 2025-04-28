@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 @export var health: int
 @export var movement_speed: int
@@ -10,11 +10,9 @@ func _ready() -> void:
 	
 func _process(delta):
 	if player:
-		# Direction to player
 		var direction = (player.global_position - global_position).normalized()
-		
-		# Move directly toward player
-		position += direction * movement_speed * delta
-		
-		# Rotate to face the movement direction
 		rotation = direction.angle()
+		velocity = direction * movement_speed
+
+func _physics_process(delta: float):
+	move_and_collide(velocity * delta)
