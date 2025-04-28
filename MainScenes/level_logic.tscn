@@ -8,3 +8,17 @@ script = ExtResource("1_i7wrj")
 [node name="LevelTimer" type="Timer" parent="."]
 
 [node name="EnemyInterval" type="Timer" parent="."]
+
+[node name="spawnpoints" type="Node2D" parent="."]
+
+[node name="spawn1" type="Node2D" parent="spawnpoints"]
+position = Vector2(0, -370)
+
+[node name="spawn2" type="Node2D" parent="spawnpoints"]
+position = Vector2(0, 370)
+
+[node name="spawn3" type="Node2D" parent="spawnpoints"]
+position = Vector2(-650, 0)
+
+[node name="spawn4" type="Node2D" parent="spawnpoints"]
+position = Vector2(650, 0)
