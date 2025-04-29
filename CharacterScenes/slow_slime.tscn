@@ -1,16 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://qv7cqqii7br0"]
+[gd_scene load_steps=9 format=3 uid="uid://qv7cqqii7br0"]
 
 [ext_resource type="Script" uid="uid://de0un0rdupx57" path="res://Script/enemy.gd" id="1_gfarm"]
-[ext_resource type="Texture2D" uid="uid://qnoyokm6a4wh" path="res://Assets/placeholder.png" id="1_o584n"]
+[ext_resource type="Texture2D" uid="uid://j0gyqdjah56c" path="res://Assets/enemy1mantis.png" id="2_gfarm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o584n"]
 radius = 38.0526
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cqhj"]
+atlas = ExtResource("2_gfarm")
+region = Rect2(0, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jvhh"]
+atlas = ExtResource("2_gfarm")
+region = Rect2(120, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li0ds"]
+atlas = ExtResource("2_gfarm")
+region = Rect2(240, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhtqe"]
+atlas = ExtResource("2_gfarm")
+region = Rect2(360, 0, 120, 120)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gfarm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_o584n")
+"texture": SubResource("AtlasTexture_2cqhj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jvhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li0ds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhtqe")
 }],
 "loop": true,
 "name": &"default",
@@ -26,6 +51,8 @@ movement_speed = 50
 shape = SubResource("CircleShape2D_o584n")
 
 [node name="SlowSlimeAnimation" type="AnimatedSprite2D" parent="."]
-modulate = Color(0, 0.701961, 0, 1)
-scale = Vector2(0.25, 0.25)
+texture_filter = 1
+scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_gfarm")
+autoplay = "default"
+frame_progress = 0.580095

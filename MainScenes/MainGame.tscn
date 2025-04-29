@@ -102,7 +102,7 @@ texture = ExtResource("8_x6swf")
 [node name="LevelLogic" parent="." instance=ExtResource("9_x6swf")]
 
 [node name="TrexNPC" parent="." instance=ExtResource("10_0avsm")]
-position = Vector2(759, 155)
+position = Vector2(848, 202)
 scale = Vector2(3.64683, 4.23303)
 
 [connection signal="body_entered" from="SecretGate" to="MainCharacter" method="_on_secret_gate_body_entered"]
