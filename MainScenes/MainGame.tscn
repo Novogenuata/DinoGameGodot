@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bl4008rq2b8p0"]
+[gd_scene load_steps=15 format=3 uid="uid://bl4008rq2b8p0"]
 
 [ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="1_52se3"]
 [ext_resource type="PackedScene" uid="uid://c4w11fhcfjs8o" path="res://CharacterScenes/shopkeep.tscn" id="2_u2kmd"]
@@ -35,6 +35,9 @@ radius = 92.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3wtxv"]
 radius = 38.6394
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6swf"]
+size = Vector2(227, 338.5)
 
 [node name="Main" type="Node2D"]
 
@@ -100,4 +103,25 @@ texture = ExtResource("8_x6swf")
 
 [node name="LevelLogic" parent="." instance=ExtResource("9_x6swf")]
 
+[node name="Level1Gate" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level1Gate"]
+position = Vector2(438, 40)
+shape = SubResource("RectangleShape2D_x6swf")
+
+[node name="Level2Gate" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2Gate"]
+position = Vector2(3379, 580)
+shape = SubResource("RectangleShape2D_x6swf")
+
+[node name="Level3Gate" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3Gate"]
+position = Vector2(2308, 2433)
+shape = SubResource("RectangleShape2D_x6swf")
+
 [connection signal="body_entered" from="SecretGate" to="MainCharacter" method="_on_secret_gate_body_entered"]
+[connection signal="body_entered" from="Level1Gate" to="MainCharacter" method="_on_level_1_gate_body_entered"]
+[connection signal="body_entered" from="Level2Gate" to="MainCharacter" method="_on_level_2_gate_body_entered"]
+[connection signal="body_entered" from="Level3Gate" to="MainCharacter" method="_on_level_3_gate_body_entered"]
