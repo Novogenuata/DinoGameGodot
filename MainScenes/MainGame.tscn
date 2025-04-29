@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c2utv5mnf5djj" path="res://icon.svg" id="6_k4tsb"]
 [ext_resource type="PackedScene" uid="uid://i3vry1botv1y" path="res://MainScenes/fish.tscn" id="8_3wtxv"]
 [ext_resource type="Texture2D" uid="uid://cq03ficbe46wa" path="res://Assets/Background/backgroundincreaseddpi.png" id="8_x6swf"]
-[ext_resource type="PackedScene" uid="uid://cbjnwx6wvqkq3" path="res://MainScenes/level_logic.tscn" id="9_x6swf"]
+[ext_resource type="PackedScene" path="res://MainScenes/level_logic.tscn" id="9_x6swf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yeuv3"]
 shader = ExtResource("5_yeuv3")
@@ -67,6 +67,7 @@ shape = SubResource("CircleShape2D_yeuv3")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="Fishes" type="Node2D" parent="."]
+position = Vector2(209, 832)
 
 [node name="fish" parent="Fishes" instance=ExtResource("8_3wtxv")]
 modulate = Color(1, 1, 1, 0.486275)
@@ -85,6 +86,7 @@ rotation = 3.14159
 scale = Vector2(3.2, 3.16)
 
 [node name="SecretGate" type="Area2D" parent="."]
+position = Vector2(167, 881)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SecretGate"]
 position = Vector2(488, 1112)
@@ -92,8 +94,8 @@ shape = SubResource("CircleShape2D_3wtxv")
 
 [node name="Backgroundincreaseddpi" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(1083, 719.5)
-scale = Vector2(1.87674, 2.25463)
+position = Vector2(1715, 1236.5)
+scale = Vector2(2.97396, 3.85031)
 texture = ExtResource("8_x6swf")
 
 [node name="LevelLogic" parent="." instance=ExtResource("9_x6swf")]
