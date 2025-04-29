@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cg406hc4arpac"]
 
-[ext_resource type="Script" uid="uid://dhhkak0cg284e" path="res://Script/settings_menu.gd" id="1_v42f0"]
+[ext_resource type="Script" path="res://Script/settings_menu.gd" id="1_v42f0"]
 [ext_resource type="Texture2D" uid="uid://c51i808o31cpe" path="res://Assets/Background/maimenubackground.png" id="2_v42f0"]
 [ext_resource type="Theme" uid="uid://ct3gsjqfkb4hm" path="res://Assets/themes/vintagetheme.tres" id="2_w1clh"]
 
