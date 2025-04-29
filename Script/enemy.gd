@@ -4,15 +4,29 @@ extends CharacterBody2D
 @export var movement_speed: int
 
 @onready var player = get_tree().get_nodes_in_group("player")[0]
+var anim_sprite: AnimatedSprite2D = null
 
-func _ready() -> void:
-	pass
-	
+func _ready():
+	anim_sprite = _find_first_animated_sprite(self)
+
+
+func _find_first_animated_sprite(node: Node) -> AnimatedSprite2D:
+	for child in node.get_children():
+		if child is AnimatedSprite2D:
+			return child
+		var found = _find_first_animated_sprite(child)
+		if found:
+			return found
+	return null
+
 func _process(delta):
-	if player:
-		var direction = (player.global_position - global_position).normalized()
-		rotation = direction.angle()
-		velocity = direction * movement_speed
+	if not player: return
 
-func _physics_process(delta: float):
+	var direction = (player.global_position - global_position).normalized()
+	velocity = direction * movement_speed
+
+	if anim_sprite:
+		anim_sprite.flip_h = direction.x < 0
+
+func _physics_process(delta):
 	move_and_collide(velocity * delta)
