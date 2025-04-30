@@ -89,4 +89,4 @@ texture_filter = 1
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_gfarm")
 autoplay = "default"
-frame_progress = 0.0529797
+frame_progress = 0.531685

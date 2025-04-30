@@ -1,16 +1,67 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2xhk6u4tgh5x"]
+[gd_scene load_steps=12 format=3 uid="uid://c2xhk6u4tgh5x"]
 
-[ext_resource type="Texture2D" uid="uid://qnoyokm6a4wh" path="res://Assets/placeholder.png" id="1_bs7fy"]
 [ext_resource type="Script" uid="uid://de0un0rdupx57" path="res://Script/enemy.gd" id="1_qr87y"]
+[ext_resource type="Texture2D" uid="uid://c6ln2d7djyacb" path="res://Assets/spritesheet_13.png" id="2_qr87y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o584n"]
 radius = 31.1448
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk05w"]
+atlas = ExtResource("2_qr87y")
+region = Rect2(360, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8t05"]
+atlas = ExtResource("2_qr87y")
+region = Rect2(480, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7txa"]
+atlas = ExtResource("2_qr87y")
+region = Rect2(600, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxnpv"]
+atlas = ExtResource("2_qr87y")
+region = Rect2(720, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87gfc"]
+atlas = ExtResource("2_qr87y")
+region = Rect2(0, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vf10"]
+atlas = ExtResource("2_qr87y")
+region = Rect2(120, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4l0l"]
+atlas = ExtResource("2_qr87y")
+region = Rect2(240, 0, 120, 120)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gfarm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_bs7fy")
+"texture": SubResource("AtlasTexture_qk05w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8t05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7txa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxnpv")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87gfc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vf10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4l0l")
 }],
 "loop": true,
 "name": &"default",
@@ -26,6 +77,9 @@ movement_speed = 150
 shape = SubResource("CircleShape2D_o584n")
 
 [node name="FastSlimeAnimation" type="AnimatedSprite2D" parent="."]
-modulate = Color(0, 0.701961, 1, 1)
-scale = Vector2(0.2, 0.2)
+texture_filter = 1
+scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_gfarm")
+animation = &"attack"
+autoplay = "default"
+frame_progress = 0.193798
