@@ -1,16 +1,60 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8c26k82maae8"]
+[gd_scene load_steps=11 format=3 uid="uid://c8c26k82maae8"]
 
 [ext_resource type="Script" uid="uid://de0un0rdupx57" path="res://Script/enemy.gd" id="1_hfa3g"]
-[ext_resource type="Texture2D" uid="uid://qnoyokm6a4wh" path="res://Assets/placeholder.png" id="1_m4ykq"]
+[ext_resource type="Texture2D" uid="uid://bhows38lkyjw3" path="res://Assets/slowenemySS.png" id="2_hfa3g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o584n"]
 radius = 52.2398
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfa3g"]
+atlas = ExtResource("2_hfa3g")
+region = Rect2(360, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y62ik"]
+atlas = ExtResource("2_hfa3g")
+region = Rect2(480, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_has1q"]
+atlas = ExtResource("2_hfa3g")
+region = Rect2(600, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyxhw"]
+atlas = ExtResource("2_hfa3g")
+region = Rect2(0, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27mtm"]
+atlas = ExtResource("2_hfa3g")
+region = Rect2(120, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_laoqt"]
+atlas = ExtResource("2_hfa3g")
+region = Rect2(240, 0, 120, 120)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gfarm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_m4ykq")
+"texture": SubResource("AtlasTexture_hfa3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y62ik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_has1q")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eyxhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27mtm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_laoqt")
 }],
 "loop": true,
 "name": &"default",
@@ -26,6 +70,9 @@ movement_speed = 25
 shape = SubResource("CircleShape2D_o584n")
 
 [node name="TankSlimeAnimation" type="AnimatedSprite2D" parent="."]
-modulate = Color(1, 0.0980392, 0, 1)
-scale = Vector2(0.35, 0.35)
+texture_filter = 1
+scale = Vector2(-1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_gfarm")
+animation = &"attack"
+autoplay = "default"
+frame_progress = 0.0917497
