@@ -82,4 +82,4 @@ scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_gfarm")
 animation = &"attack"
 autoplay = "default"
-frame_progress = 0.193798
+frame_progress = 0.34766

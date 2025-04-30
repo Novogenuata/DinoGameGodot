@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://jbtatuosafgv"]
+
+[ext_resource type="Texture2D" uid="uid://brxpmlk8adwev" path="res://Assets/Background/marshlands.jpeg" id="2_j812s"]
+[ext_resource type="PackedScene" uid="uid://cbjnwx6wvqkq3" path="res://MainScenes/level_logic.tscn" id="3_1qajm"]
+[ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="3_j812s"]
+
+[node name="InfiniteMarshlands" type="Node2D"]
+
+[node name="MainCharacter" parent="." groups=["player"] instance=ExtResource("3_j812s")]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.9, 0.9)
+motion_mirroring = Vector2(120, 120)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("2_j812s")
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 3000)
+
+[node name="LevelLogic" parent="." instance=ExtResource("3_1qajm")]
