@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://bl4008rq2b8p0"]
+[gd_scene load_steps=16 format=3 uid="uid://bl4008rq2b8p0"]
 
+[ext_resource type="Script" uid="uid://1axavau2ungs" path="res://MainScenes/Main.gd" id="1_0avsm"]
 [ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="1_52se3"]
 [ext_resource type="PackedScene" uid="uid://c4w11fhcfjs8o" path="res://CharacterScenes/shopkeep.tscn" id="2_u2kmd"]
 [ext_resource type="PackedScene" uid="uid://c8d4uft5xgnb5" path="res://Interactable_Components/actionable.tscn" id="3_ldcld"]
@@ -40,6 +41,7 @@ radius = 70.0
 size = Vector2(20, 26.2295)
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_0avsm")
 
 [node name="Icon" type="Sprite2D" parent="."]
 visible = false
@@ -52,6 +54,13 @@ texture = ExtResource("6_k4tsb")
 
 [node name="MainCharacter" parent="." groups=["player"] instance=ExtResource("1_52se3")]
 position = Vector2(573, 314)
+
+[node name="cameracontroller" type="Camera2D" parent="MainCharacter"]
+position = Vector2(-19, 19)
+limit_left = 315
+limit_top = 581
+limit_right = 2848
+limit_bottom = 2186
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_52se3")
@@ -96,6 +105,7 @@ position = Vector2(488, 1112)
 shape = SubResource("CircleShape2D_3wtxv")
 
 [node name="Backgroundincreaseddpi" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 z_index = -2
 position = Vector2(1715, 1236.5)
 scale = Vector2(2.97396, 3.85031)
