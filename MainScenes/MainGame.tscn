@@ -1,6 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://bl4008rq2b8p0"]
+[gd_scene load_steps=17 format=3 uid="uid://bl4008rq2b8p0"]
 
-[ext_resource type="Script" uid="uid://1axavau2ungs" path="res://MainScenes/Main.gd" id="1_0avsm"]
+[ext_resource type="Script" path="res://MainScenes/Main.gd" id="1_0avsm"]
 [ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="1_52se3"]
 [ext_resource type="PackedScene" uid="uid://c4w11fhcfjs8o" path="res://CharacterScenes/shopkeep.tscn" id="2_u2kmd"]
 [ext_resource type="PackedScene" uid="uid://c8d4uft5xgnb5" path="res://Interactable_Components/actionable.tscn" id="3_ldcld"]
@@ -39,6 +39,9 @@ radius = 70.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6swf"]
 size = Vector2(20, 26.2295)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0avsm"]
+size = Vector2(14.6975, 298.232)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_0avsm")
@@ -121,6 +124,32 @@ scale = Vector2(3.64683, 4.23303)
 position = Vector2(450, 63)
 scale = Vector2(10.84, 4.88)
 shape = SubResource("RectangleShape2D_x6swf")
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+position = Vector2(-1.5, 1193.4)
+scale = Vector2(1, 11.52)
+shape = SubResource("RectangleShape2D_0avsm")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+position = Vector2(3426, 1218)
+scale = Vector2(1, 11.52)
+shape = SubResource("RectangleShape2D_0avsm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+position = Vector2(1718.22, 2485.65)
+rotation = 1.56713
+scale = Vector2(1, 11.52)
+shape = SubResource("RectangleShape2D_0avsm")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+position = Vector2(1712, -14)
+rotation = 1.56713
+scale = Vector2(1, 11.52)
+shape = SubResource("RectangleShape2D_0avsm")
 
 [connection signal="body_entered" from="SecretGate" to="MainCharacter" method="_on_secret_gate_body_entered"]
 [connection signal="body_entered" from="Area2D" to="MainCharacter" method="_on_area_2d_body_entered"]
