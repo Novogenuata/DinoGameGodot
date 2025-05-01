@@ -49,20 +49,9 @@ func _on_secret_gate_body_entered(body: Node2D) -> void:
 		SceneManager.change_scene("res://MainScenes/water_scene.tscn")
 
 
-func _on_level_3_gate_body_entered(body: Node2D) -> void:
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		#change to the water scene with the water gun
-		SceneManager.change_scene("res://MainScenes/water_scene.tscn")
-
-
-func _on_level_2_gate_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		#change to the water scene with the water gun
-		SceneManager.change_scene("res://MainScenes/water_scene.tscn")
-
-
-func _on_level_1_gate_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		#change to the water scene with the water gun
-		SceneManager.change_scene("res://MainScenes/water_scene.tscn")
-		#this is a test
+		SceneManager.change_scene("res://infinite_marshlands.tscn")
