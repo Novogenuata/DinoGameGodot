@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-[gd_scene load_steps=9 format=3 uid="uid://uicwwec76xkq"]
-=======
 [gd_scene load_steps=10 format=3 uid="uid://btbq1llxgxmbq"]
->>>>>>> 54424cce7ecde949736b2c8c62006f4cefe3fff4
 
-[ext_resource type="Script" path="res://Script/coin.gd" id="1_0o66h"]
+[ext_resource type="Script" uid="uid://dgkx54g4ooet5" path="res://Script/coin.gd" id="1_0o66h"]
 [ext_resource type="Texture2D" uid="uid://dvwgclwg23fxp" path="res://Assets/coinsheet.png" id="1_fkm2w"]
 [ext_resource type="AudioStream" uid="uid://bifgwrihytb8k" path="res://Assets/Audio/Collectable_04.wav" id="3_3tski"]
 
