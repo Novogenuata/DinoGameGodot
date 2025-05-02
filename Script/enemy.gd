@@ -41,3 +41,7 @@ func _physics_process(delta):
 	else:
 		
 		anim_sprite.play("default")
+func take_damage(amount: int):
+	health -= amount
+	if health <= 0:
+		queue_free() 
