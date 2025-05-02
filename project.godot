@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+AudioManager="*res://Script/AudioManager.gd"
 
 [editor]
 
