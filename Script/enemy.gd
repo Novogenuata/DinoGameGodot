@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var player = get_tree().get_nodes_in_group("player")[0]
 var anim_sprite: AnimatedSprite2D = null
 
+@export var Coin = preload("res://collectableScenes/coin.tscn")
 
 func _ready():
 	anim_sprite = _find_first_animated_sprite(self)
@@ -41,7 +42,17 @@ func _physics_process(delta):
 	else:
 		
 		anim_sprite.play("default")
+		
 func take_damage(amount: int):
 	health -= amount
 	if health <= 0:
-		queue_free() 
+		call_deferred("_die")
+
+func _die():
+	# Instantiate the coin and add it to the parent
+	var coin_instance = Coin.instantiate()
+	get_parent().add_child(coin_instance)
+	coin_instance.global_position = global_position
+
+	# Remove this enemy from the scene
+	queue_free()

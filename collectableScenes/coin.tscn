@@ -56,7 +56,8 @@ autoplay = "default"
 position = Vector2(2, -7)
 shape = SubResource("CircleShape2D_502vl")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D/CollisionShape2D"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(2, -7)
 stream = ExtResource("2_2msmd")
 bus = &"SFX"
 
