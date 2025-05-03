@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bi5b41acyh5aa"]
+[gd_scene load_steps=2 format=3 uid="uid://bi5b41acyh5aa"]
+
+[ext_resource type="Script" uid="uid://dg85lcljuvxhi" path="res://collectableScenes/coin_label_count.gd" id="1_t45i5"]
 
 [node name="CoinLabelCount" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_t45i5")
 
 [node name="Coins" type="Label" parent="."]
 layout_mode = 0

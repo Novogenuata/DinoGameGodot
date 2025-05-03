@@ -6,7 +6,7 @@
 
 [node name="InfiniteMarshlands" type="Node2D"]
 
-[node name="MainCharacter" parent="." groups=["player"] instance=ExtResource("3_j812s")]
+[node name="MainCharacter" parent="." instance=ExtResource("3_j812s")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
