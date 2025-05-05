@@ -70,10 +70,10 @@ animations = [{
 
 [node name="FastSlime" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 2
-collision_mask = 4
+collision_mask = 5
 script = ExtResource("1_qr87y")
 health = 1
-movement_speed = 150
+movement_speed = 100
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_o584n")

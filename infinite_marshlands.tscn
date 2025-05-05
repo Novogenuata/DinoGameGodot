@@ -28,6 +28,7 @@ region_filter_clip_enabled = true
 [node name="LevelLogic" parent="." instance=ExtResource("3_1qajm")]
 
 [node name="returnGate" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="returnGate"]
 position = Vector2(-2, -201)
