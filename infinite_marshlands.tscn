@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://jbtatuosafgv"]
+[gd_scene load_steps=4 format=3 uid="uid://jbtatuosafgv"]
 
-[ext_resource type="Texture2D" uid="uid://dxl1047kpo4rb" path="res://Assets/Background/BGMLPNG.png" id="2_j812s"]
+[ext_resource type="Texture2D" uid="uid://cdruq27kmojrv" path="res://Assets/Background/BGTEST.png" id="2_j812s"]
 [ext_resource type="PackedScene" uid="uid://cbjnwx6wvqkq3" path="res://MainScenes/level_logic.tscn" id="3_1qajm"]
 [ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="3_j812s"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_j812s"]
-radius = 6.67946
 
 [node name="InfiniteMarshlands" type="Node2D"]
 
@@ -22,17 +19,7 @@ texture_filter = 1
 texture_repeat = 2
 texture = ExtResource("2_j812s")
 region_enabled = true
-region_rect = Rect2(0, 0, 2500, 1250)
+region_rect = Rect2(0, 0, 3000, 3000)
 region_filter_clip_enabled = true
 
 [node name="LevelLogic" parent="." instance=ExtResource("3_1qajm")]
-
-[node name="returnGate" type="Area2D" parent="."]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="returnGate"]
-position = Vector2(-2, -201)
-scale = Vector2(5.06878, 5.74004)
-shape = SubResource("CircleShape2D_j812s")
-
-[connection signal="body_entered" from="returnGate" to="MainCharacter" method="_on_return_gate_body_entered"]
