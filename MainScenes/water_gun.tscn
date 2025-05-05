@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cchdwf3mwrual"]
+[gd_scene load_steps=5 format=3 uid="uid://cchdwf3mwrual"]
 
+[ext_resource type="Script" uid="uid://cnve3w6jbt7bg" path="res://Script/water_gun.gd" id="1_jsb3e"]
 [ext_resource type="Texture2D" uid="uid://dd2bc1uy8e7ve" path="res://Assets/WaterGun.png" id="1_vt1ck"]
+[ext_resource type="AudioStream" uid="uid://cpwx20i05wo41" path="res://Assets/Audio/Collectable_04.wav" id="3_r221k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jsb3e"]
 size = Vector2(20, 46)
 
 [node name="WaterGun" type="Node2D"]
+script = ExtResource("1_jsb3e")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -16,3 +19,9 @@ texture = ExtResource("1_vt1ck")
 position = Vector2(0, -2)
 scale = Vector2(4.88, 1)
 shape = SubResource("RectangleShape2D_jsb3e")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D"]
+stream = ExtResource("3_r221k")
+bus = &"SFX"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
