@@ -24,7 +24,7 @@ position = Vector2(374, 239)
 position = Vector2(-3, 5)
 shape = SubResource("CircleShape2D_unjqi")
 
-[node name="MainCharacter" parent="." groups=["player"] instance=ExtResource("1_wib7b")]
+[node name="MainCharacter" parent="." instance=ExtResource("1_wib7b")]
 
 [node name="WaterGun" parent="." instance=ExtResource("4_dwd6w")]
 position = Vector2(-10, 218)
