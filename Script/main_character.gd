@@ -90,5 +90,6 @@ func take_damage(amount: int) -> void:
 		
 		
 func _respawn() -> void:
+	Globalmanager.emit_signal("player_died")
 	SceneManager.change_scene("res://MainScenes/MainGame.tscn")
 	current_health  = max_health

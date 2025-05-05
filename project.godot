@@ -21,6 +21,7 @@ SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 AudioManager="*res://Script/AudioManager.gd"
 CoinManager="*res://Script/CoinManager.gd"
+Globalmanager="*res://Script/globalmanager.gd"
 
 [editor]
 

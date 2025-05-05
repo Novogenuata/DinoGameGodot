@@ -11,7 +11,9 @@ var attack_timer: Timer
 @export var Coin = preload("res://collectableScenes/coin.tscn")
 
 func _ready():
-	anim_sprite = _find_first_animated_sprite(self)
+	anim_sprite = _find_first_animated_sprite(self) 
+	if Globalmanager.has_signal("player_died"):
+		Globalmanager.connect("player_died", Callable(self, "_on_player_died"))
 
 
 	attack_timer = Timer.new()
@@ -70,4 +72,7 @@ func _die():
 	get_parent().add_child(coin_instance)
 	coin_instance.global_position = global_position
 
+	queue_free()
+	
+func _on_player_died() -> void:
 	queue_free()
