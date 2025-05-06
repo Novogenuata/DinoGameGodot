@@ -84,7 +84,7 @@ func take_damage(amount: int) -> void:
 		_respawn()
 		return
 	# start invincibility countdown (no extra node needed)
-	await get_tree().create_timer(invincibility_time).timeout
+	await get_tree().create_timer(invincibility_time).timeout 
 	invincible = false
 	print("Vulnerable again")
 		
@@ -92,4 +92,5 @@ func take_damage(amount: int) -> void:
 func _respawn() -> void:
 	Globalmanager.emit_signal("player_died")
 	SceneManager.change_scene("res://MainScenes/MainGame.tscn")
+	sprite.play("sleep")
 	current_health  = max_health

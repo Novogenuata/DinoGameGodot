@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cpyrkagpxn8wd"]
 
-[ext_resource type="Texture2D" uid="uid://wlfydaeu3kh5" path="res://Assets/spritesheet_9.png" id="1_73brt"]
+[ext_resource type="Texture2D" uid="uid://ctm3t4l60svkx" path="res://Assets/trexssfixed.png" id="1_73brt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rcmxn"]
 atlas = ExtResource("1_73brt")
@@ -8,15 +8,15 @@ region = Rect2(0, 0, 120, 120)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_11y4s"]
 atlas = ExtResource("1_73brt")
-region = Rect2(360, 0, 120, 120)
+region = Rect2(240, 0, 120, 120)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aotwi"]
 atlas = ExtResource("1_73brt")
-region = Rect2(240, 0, 120, 120)
+region = Rect2(360, 0, 120, 120)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s2crl"]
 atlas = ExtResource("1_73brt")
-region = Rect2(360, 0, 120, 120)
+region = Rect2(240, 0, 120, 120)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_poomi"]
 atlas = ExtResource("1_73brt")
@@ -32,7 +32,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_11y4s")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"Default",
 "speed": 5.0
 }, {
 "frames": [{
@@ -59,9 +59,9 @@ height = 68.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ykwj2")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.249376
+animation = &"talk"
+autoplay = "Default"
+frame_progress = 0.820389
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_qdccr")
