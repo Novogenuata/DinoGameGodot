@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ysngkd6bb7yx"]
+[gd_scene load_steps=8 format=3 uid="uid://ysngkd6bb7yx"]
 
-[ext_resource type="Script" path="res://Script/water_scene.gd" id="1_o43j3"]
+[ext_resource type="Script" uid="uid://daucxt0wkexko" path="res://Script/water_scene.gd" id="1_o43j3"]
 [ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="1_wib7b"]
 [ext_resource type="Texture2D" uid="uid://df2cstplhaiwd" path="res://Assets/Background/Water.jpeg" id="2_ixydh"]
 [ext_resource type="PackedScene" uid="uid://cchdwf3mwrual" path="res://MainScenes/water_gun.tscn" id="4_dwd6w"]
@@ -8,10 +8,20 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_unjqi"]
 radius = 68.1836
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwd6w"]
+size = Vector2(16.2694, 95.2831)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gxso"]
+size = Vector2(1612.8, 0.930019)
+
 [node name="WaterScene" type="Node2D"]
 script = ExtResource("1_o43j3")
 
-[node name="background" type="Sprite2D" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="background" type="Sprite2D" parent="ParallaxBackground"]
 z_index = -1
 texture_filter = 1
 position = Vector2(553.5, 273)
@@ -28,17 +38,31 @@ shape = SubResource("CircleShape2D_unjqi")
 [node name="MainCharacter" parent="." instance=ExtResource("1_wib7b")]
 
 [node name="cameracontroller" type="Camera2D" parent="MainCharacter"]
-position = Vector2(-3, 3)
+position = Vector2(-15, -9)
 scale = Vector2(-9.61393e+06, -108304)
-limit_left = 315
-limit_top = 581
-limit_right = 2848
-limit_bottom = 2186
+limit_left = 553
+limit_top = 273
+limit_right = 673
+limit_bottom = 393
 
 [node name="WaterGun" parent="." instance=ExtResource("4_dwd6w")]
 position = Vector2(-10, 218)
 scale = Vector2(1.48, 1.57105)
 
 [node name="walls" type="Node2D" parent="."]
+visible = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/StaticBody2D"]
+position = Vector2(-259.187, 246)
+rotation = -3.14159
+scale = Vector2(2.85039, -23.5869)
+shape = SubResource("RectangleShape2D_dwd6w")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls/StaticBody2D"]
+position = Vector2(1285, 714.001)
+scale = Vector2(5.11161, 379.604)
+shape = SubResource("RectangleShape2D_0gxso")
 
 [connection signal="body_entered" from="exitgate" to="." method="_on_exitgate_body_entered"]
