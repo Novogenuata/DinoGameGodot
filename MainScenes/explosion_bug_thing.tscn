@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://bovwirgeoryxk"]
+
+[ext_resource type="Script" uid="uid://bpwvep3j2lwag" path="res://MainScenes/explosion_bug_thing.gd" id="1_jwhkc"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jwhkc"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_5xe3v"]
+colors = PackedColorArray(0.286092, 0.226374, 0.0578335, 1, 1, 1, 1, 1)
+
+[node name="ExplosionBugThing" type="CPUParticles2D"]
+z_index = 3
+material = SubResource("CanvasItemMaterial_jwhkc")
+scale = Vector2(10, 10)
+amount = 18
+lifetime = 0.51
+speed_scale = 1.55
+explosiveness = 0.4
+randomness = 0.51
+emission_shape = 3
+emission_rect_extents = Vector2(2, 1)
+direction = Vector2(3, 0.5)
+spread = 40.0
+gravity = Vector2(0, 2)
+initial_velocity_max = 4.0
+angular_velocity_min = -720.0
+angular_velocity_max = 103.37
+linear_accel_min = 7.25
+linear_accel_max = 19.37
+radial_accel_min = -10.74
+radial_accel_max = 88.25
+tangential_accel_min = 42.43
+tangential_accel_max = 82.83
+damping_min = 3.0
+damping_max = 3.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+color = Color(0.729412, 0, 0.133333, 1)
+color_ramp = SubResource("Gradient_5xe3v")
+hue_variation_min = 0.89
+hue_variation_max = 0.89
+anim_speed_min = 4.0
+anim_speed_max = 91.1
+anim_offset_min = 1.0
+anim_offset_max = 1.0
+script = ExtResource("1_jwhkc")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
