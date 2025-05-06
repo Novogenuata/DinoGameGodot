@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b5hrtl45ocwbr" path="res://collectableScenes/coin.gd" id="1_7q22r"]
 [ext_resource type="Texture2D" uid="uid://dvwgclwg23fxp" path="res://Assets/coinsheet.png" id="1_502vl"]
-[ext_resource type="AudioStream" uid="uid://cpwx20i05wo41" path="res://Assets/Audio/Collectable_04.wav" id="2_2msmd"]
+[ext_resource type="AudioStream" uid="uid://b81qrw4kf6252" path="res://Assets/Audio/item_metal.wav" id="3_7q22r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2msmd"]
 atlas = ExtResource("1_502vl")
@@ -48,11 +48,6 @@ script = ExtResource("1_7q22r")
 
 [node name="Area2D" type="Area2D" parent="."]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D"]
-position = Vector2(2, -7)
-stream = ExtResource("2_2msmd")
-bus = &"SFX"
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 sprite_frames = SubResource("SpriteFrames_8yhaw")
 autoplay = "default"
@@ -60,5 +55,10 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(2, -7)
 shape = SubResource("CircleShape2D_502vl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D"]
+position = Vector2(2, -7)
+stream = ExtResource("3_7q22r")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
