@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://4fqy5mnmerwv"]
+
+[ext_resource type="Texture2D" uid="uid://blfuomni03hol" path="res://Assets/skullpickup.png" id="1_qehrr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_778em"]
+atlas = ExtResource("1_qehrr")
+region = Rect2(0, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6e4n"]
+atlas = ExtResource("1_qehrr")
+region = Rect2(120, 0, 120, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_frvnk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_778em")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6e4n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_38fpe"]
+radius = 29.0172
+
+[node name="SkullPickup" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_frvnk")
+frame_progress = 0.847959
+
+[node name="Hitbox" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_38fpe")
