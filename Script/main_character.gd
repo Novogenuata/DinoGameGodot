@@ -99,3 +99,11 @@ func _respawn() -> void:
 	SceneManager.change_scene("res://MainScenes/MainGame.tscn")
 	sprite.play("sleep")
 	current_health  = max_health
+
+
+func _on_to_flower_lands_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player") and CoinManager.coin_count >= 20:
+		CoinManager.coin_count -= 20
+		SceneManager.change_scene("res://MainScenes/infini_flowerlands.tscn")
+	else:
+		print("Not enough coins. You need 20 to enter.")
