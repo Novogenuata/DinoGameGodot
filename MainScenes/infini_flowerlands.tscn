@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6d3ey36n5clg"]
+
+[ext_resource type="Texture2D" uid="uid://r0mh3frekp8q" path="res://Assets/Background/bgflower.png" id="1_jpqiq"]
+[ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="2_tna28"]
+[ext_resource type="PackedScene" uid="uid://cbjnwx6wvqkq3" path="res://MainScenes/level_logic.tscn" id="3_kady8"]
+
+[node name="Infini_flowerlands" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.9, 0.9)
+motion_mirroring = Vector2(120, 120)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(0.626764, 0.780158, 0.647145, 1)
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("1_jpqiq")
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 3000)
+
+[node name="MainCharacter" parent="." instance=ExtResource("2_tna28")]
+max_health = 3
+
+[node name="LevelLogic" parent="." instance=ExtResource("3_kady8")]
