@@ -12,6 +12,8 @@ var attack_timer: Timer
 
 @export var bugExplosionScene = preload("res://MainScenes/explosion_bug_thing.tscn")
 
+@export var HealthPickup = preload("res://collectableScenes/healthy_pork.tscn")
+
 func _ready():
 	anim_sprite = _find_first_animated_sprite(self) 
 	if Globalmanager.has_signal("player_died"):
@@ -73,12 +75,18 @@ func _die():
 	get_parent().add_child(explosion_instance)
 	explosion_instance.global_position = global_position
 
-
 	var coin_instance = Coin.instantiate()
 	get_parent().add_child(coin_instance)
 	coin_instance.global_position = global_position
 
+	# 5% chance to drop a health pickup
+	if randi() % 100 < 5:
+		var health_instance = HealthPickup.instantiate()
+		get_parent().add_child(health_instance)
+		health_instance.global_position = global_position
+
 	queue_free()
+
 	
 func _on_player_died() -> void:
 	queue_free()

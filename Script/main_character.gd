@@ -89,6 +89,11 @@ func take_damage(amount: int) -> void:
 	print("Vulnerable again")
 		
 		
+func heal(amount: int) -> void:
+	current_health = min(current_health + amount, max_health)
+	print("Healed! health =", current_health)
+		
+
 func _respawn() -> void:
 	Globalmanager.emit_signal("player_died")
 	SceneManager.change_scene("res://MainScenes/MainGame.tscn")
