@@ -10,6 +10,8 @@ var attack_timer: Timer
 
 @export var Coin = preload("res://collectableScenes/coin.tscn")
 
+@export var bugExplosionScene = preload("res://MainScenes/explosion_bug_thing.tscn")
+
 func _ready():
 	anim_sprite = _find_first_animated_sprite(self) 
 	if Globalmanager.has_signal("player_died"):
@@ -67,6 +69,10 @@ func take_damage(amount: int):
 		call_deferred("_die")
 
 func _die():
+	var explosion_instance = bugExplosionScene.instantiate()
+	get_parent().add_child(explosion_instance)
+	explosion_instance.global_position = global_position
+
 
 	var coin_instance = Coin.instantiate()
 	get_parent().add_child(coin_instance)
