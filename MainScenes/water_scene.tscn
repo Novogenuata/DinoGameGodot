@@ -27,8 +27,18 @@ shape = SubResource("CircleShape2D_unjqi")
 
 [node name="MainCharacter" parent="." instance=ExtResource("1_wib7b")]
 
+[node name="cameracontroller" type="Camera2D" parent="MainCharacter"]
+position = Vector2(-3, 3)
+scale = Vector2(-9.61393e+06, -108304)
+limit_left = 315
+limit_top = 581
+limit_right = 2848
+limit_bottom = 2186
+
 [node name="WaterGun" parent="." instance=ExtResource("4_dwd6w")]
 position = Vector2(-10, 218)
 scale = Vector2(1.48, 1.57105)
+
+[node name="walls" type="Node2D" parent="."]
 
 [connection signal="body_entered" from="exitgate" to="." method="_on_exitgate_body_entered"]
