@@ -1,8 +1,16 @@
 ~ start
 
-%25 Shopkeep:  Welcome, Traveller!
-%25 Shopkeep:  Shall I interest you in any[shake rate=500 level=100] pork?[/shake]
-%25 Shopkeep: My pork is the best in the world!
-%25 Shopkeep: [shake rate=20 level=10]Don't ask me where I get my pork from.[/shake]
+The Pork:  Welcome traveller! No time to talk, [wave amp=25 freq=5]giant bugs[/wave] are attacking our beautiful town!
+The Pork: The guard is too lazy to help. [shake rate=20 level=10]Please help us![/shake]
+
+- What can I do to help? 
+	The Pork: Go into the first area and mess up as many bugs as you can.
+	The Pork: Use W A S D to control the character and your mouse to control the gun. Use the left mouse button to shoot!
+	The Pork: The bugs will drop [wave amp=25 freq=5]coins[/wave] and sometimes [wave amp=25 freq=5]pork[/wave]. The pork will heal you! 
+	The Pork: Once you accumulate[wave amp=25 freq=5] 20[/wave] coins, proceed to the next area.
+	The Pork: Once you get[wave amp=25 freq=5] 300 [/wave]coins, talk to the guard for a surprise!
+	
+- Goodbye!
+	The Pork: [shake rate=20 level=10]Please save the town![/shake]
 
 => END!
