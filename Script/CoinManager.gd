@@ -9,4 +9,4 @@ func add_coin():
 
 func update_label():
 	if label_node:
-		label_node.text = str(coin_count)
+		label_node.text = str("Coins: ", coin_count)

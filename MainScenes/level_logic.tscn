@@ -24,10 +24,17 @@ position = Vector2(-650, 0)
 [node name="spawn4" type="Node2D" parent="spawnpoints"]
 position = Vector2(650, 0)
 
-[node name="LevelLabel" parent="." instance=ExtResource("2_ds13f")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelLabel" parent="CanvasLayer" instance=ExtResource("2_ds13f")]
 unique_name_in_owner = true
 z_index = 2
-offset_left = -19.0
-offset_top = -326.0
-offset_right = 22.0
-offset_bottom = -303.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -31.0
+offset_top = 0.0
+offset_right = 31.0
+offset_bottom = 49.0
+grow_vertical = 1
