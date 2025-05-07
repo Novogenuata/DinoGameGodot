@@ -6,7 +6,8 @@ extends CharacterBody2D
 @onready var Actfinder = %ActionableFinder  # Area2D
 @onready var Actfinder_collision = %ActionableFinder/CollisionShape2D  # CollisionShape2D inside Actfinder
 @export var invincibility_time: float = 1.0
-
+@onready var heart_bar = %HeartBar
+@export var heart_scene = preload("res://MainScenes/heart_container.tscn")
 
 @export var max_health: int = 5 
 var invincible: bool = false
@@ -20,10 +21,13 @@ var spawn_position: Vector2
 var finder_original_x
 var actfinder_original_x
 
+var heart_nodes: Array = []
+
 func _ready():
 	finder_original_x = finder.position.x
 	actfinder_original_x = Actfinder.position.x
 	current_health = max_health
+	spawn_hearts()
 
 func get_input():
 	var input_dir = Input.get_vector("left", "right", "up", "down")
@@ -79,6 +83,10 @@ func take_damage(amount: int) -> void:
 		return
 	invincible = true
 	current_health -= amount
+	for i in range(amount):
+		if heart_nodes.size() > 0:
+			var heart = heart_nodes.pop_back()
+			heart.queue_free()
 	print("Hit! health=", current_health)
 	if current_health <= 0:
 		_respawn()
@@ -90,8 +98,21 @@ func take_damage(amount: int) -> void:
 		
 		
 func heal(amount: int) -> void:
-	current_health = min(current_health + amount, max_health)
+	var new_health = min(current_health + amount, max_health)
+	var hearts_to_add = new_health - current_health
+	current_health = new_health
 	print("Healed! health =", current_health)
+
+	for i in range(hearts_to_add):
+		if current_health + i <= max_health:
+			var heart = heart_scene.instantiate()
+			heart_bar.add_child(heart)
+
+			if heart.has_node("AnimatedSprite2D"):
+				var anim = heart.get_node("AnimatedSprite2D")
+				anim.play("default")
+			
+			heart_nodes.append(heart)
 		
 
 func _respawn() -> void:
@@ -107,3 +128,14 @@ func _on_to_flower_lands_body_entered(body: Node2D) -> void:
 		SceneManager.change_scene("res://MainScenes/infini_flowerlands.tscn")
 	else:
 		print("Not enough coins. You need 20 to enter.")
+		
+func spawn_hearts():
+	heart_nodes.clear()
+
+	for child in heart_bar.get_children():
+		child.queue_free()
+
+	for i in range(max_health):
+		var heart = heart_scene.instantiate()
+		heart_bar.add_child(heart)
+		heart_nodes.append(heart)
