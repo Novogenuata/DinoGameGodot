@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://bagtlegoc6rlv"]
+
+[ext_resource type="Texture2D" uid="uid://c1pfs4oc6cxan" path="res://Assets/secretshine.png" id="1_w07qe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f54da"]
+atlas = ExtResource("1_w07qe")
+region = Rect2(0, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28isv"]
+atlas = ExtResource("1_w07qe")
+region = Rect2(120, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_easiw"]
+atlas = ExtResource("1_w07qe")
+region = Rect2(240, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_132sf"]
+atlas = ExtResource("1_w07qe")
+region = Rect2(360, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjp8t"]
+atlas = ExtResource("1_w07qe")
+region = Rect2(480, 0, 120, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o6yfv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f54da")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28isv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_easiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_132sf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjp8t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="shiny" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o6yfv")
+autoplay = "default"
+frame_progress = 0.799214
