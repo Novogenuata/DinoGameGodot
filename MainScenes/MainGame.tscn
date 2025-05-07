@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bl4008rq2b8p0"]
+[gd_scene load_steps=21 format=3 uid="uid://bl4008rq2b8p0"]
 
 [ext_resource type="Script" uid="uid://1axavau2ungs" path="res://MainScenes/Main.gd" id="1_0avsm"]
 [ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="1_52se3"]
@@ -8,8 +8,11 @@
 [ext_resource type="Shader" uid="uid://si0hmnhjaio8" path="res://new_shader.gdshader" id="5_yeuv3"]
 [ext_resource type="Texture2D" uid="uid://c2utv5mnf5djj" path="res://icon.svg" id="6_k4tsb"]
 [ext_resource type="PackedScene" uid="uid://i3vry1botv1y" path="res://MainScenes/fish.tscn" id="8_3wtxv"]
-[ext_resource type="Texture2D" uid="uid://cq03ficbe46wa" path="res://Assets/Background/backgroundincreaseddpi.png" id="8_x6swf"]
+[ext_resource type="Texture2D" uid="uid://bqm8gh4n5ra4h" path="res://Assets/Background/Untitled_Artwork.png" id="9_0avsm"]
 [ext_resource type="PackedScene" uid="uid://cpyrkagpxn8wd" path="res://trex_npc.tscn" id="10_0avsm"]
+[ext_resource type="PackedScene" uid="uid://cs7fehll0ekjl" path="res://MainScenes/tree.tscn" id="11_x8qfq"]
+[ext_resource type="PackedScene" uid="uid://bhu2uoihyyhew" path="res://MainScenes/grass.tscn" id="12_1vc8p"]
+[ext_resource type="PackedScene" uid="uid://5yv1s1qjcmlv" path="res://MainScenes/flower.tscn" id="13_lq2jo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yeuv3"]
 shader = ExtResource("5_yeuv3")
@@ -38,13 +41,13 @@ radius = 92.0
 radius = 70.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6swf"]
-size = Vector2(20, 26.2295)
+size = Vector2(20, 73.1557)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0avsm"]
 size = Vector2(14.6975, 298.232)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x8qfq"]
-size = Vector2(417, 237)
+size = Vector2(222.5, 237)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_0avsm")
@@ -59,7 +62,7 @@ scale = Vector2(18.4453, 10.9922)
 texture = ExtResource("6_k4tsb")
 
 [node name="MainCharacter" parent="." instance=ExtResource("1_52se3")]
-position = Vector2(573, 314)
+position = Vector2(1684, 881)
 
 [node name="cameracontroller" type="Camera2D" parent="MainCharacter"]
 position = Vector2(-19, 19)
@@ -72,7 +75,7 @@ limit_bottom = 2186
 environment = SubResource("Environment_52se3")
 
 [node name="Shopkeep" parent="." instance=ExtResource("2_u2kmd")]
-position = Vector2(1557, 561)
+position = Vector2(1986, 881)
 collision_mask = 3
 
 [node name="Actionable" parent="Shopkeep" instance=ExtResource("3_ldcld")]
@@ -85,7 +88,7 @@ shape = SubResource("CircleShape2D_yeuv3")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="Fishes" type="Node2D" parent="."]
-position = Vector2(209, 832)
+position = Vector2(409, 490)
 
 [node name="fish" parent="Fishes" instance=ExtResource("8_3wtxv")]
 modulate = Color(1, 1, 1, 0.486275)
@@ -104,7 +107,7 @@ rotation = 3.14159
 scale = Vector2(3.2, 3.16)
 
 [node name="SecretGate" type="Area2D" parent="."]
-position = Vector2(167, 881)
+position = Vector2(352, 598)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SecretGate"]
 position = Vector2(488, 1112)
@@ -113,18 +116,18 @@ shape = SubResource("CircleShape2D_3wtxv")
 [node name="Backgroundincreaseddpi" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 z_index = -2
-position = Vector2(1715, 1236.5)
-scale = Vector2(2.97396, 3.85031)
-texture = ExtResource("8_x6swf")
+position = Vector2(1712.5, 1254)
+scale = Vector2(1.25932, 1.05335)
+texture = ExtResource("9_0avsm")
 
 [node name="TrexNPC" parent="." instance=ExtResource("10_0avsm")]
-position = Vector2(848, 202)
+position = Vector2(2810, 665)
 scale = Vector2(3.64683, 4.23303)
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(450, 63)
+position = Vector2(468, 940)
 scale = Vector2(10.84, 4.88)
 shape = SubResource("RectangleShape2D_x6swf")
 
@@ -133,23 +136,23 @@ shape = SubResource("RectangleShape2D_x6swf")
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
-position = Vector2(-1.5, 1193.4)
+position = Vector2(352, 1193)
 scale = Vector2(1, 11.52)
 shape = SubResource("RectangleShape2D_0avsm")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls/StaticBody2D"]
-position = Vector2(3426, 1218)
+position = Vector2(3083, 1193)
 scale = Vector2(1, 11.52)
 shape = SubResource("RectangleShape2D_0avsm")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/StaticBody2D"]
-position = Vector2(1718.22, 2485.65)
+position = Vector2(1710, 2107)
 rotation = 1.56713
 scale = Vector2(1, 11.52)
 shape = SubResource("RectangleShape2D_0avsm")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls/StaticBody2D"]
-position = Vector2(1712, -14)
+position = Vector2(1710, 401)
 rotation = 1.56713
 scale = Vector2(1, 11.52)
 shape = SubResource("RectangleShape2D_0avsm")
@@ -157,8 +160,122 @@ shape = SubResource("RectangleShape2D_0avsm")
 [node name="toFlowerLands" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="toFlowerLands"]
-position = Vector2(2337, 2311)
+position = Vector2(2956, 940)
 shape = SubResource("RectangleShape2D_x8qfq")
+
+[node name="nature" type="Node2D" parent="."]
+z_index = -1
+
+[node name="grass" parent="nature" instance=ExtResource("12_1vc8p")]
+position = Vector2(1362, 725)
+
+[node name="grass2" parent="nature" instance=ExtResource("12_1vc8p")]
+position = Vector2(1431, 725)
+
+[node name="grass3" parent="nature" instance=ExtResource("12_1vc8p")]
+position = Vector2(840, 1226)
+
+[node name="grass4" parent="nature" instance=ExtResource("12_1vc8p")]
+position = Vector2(900, 1252)
+
+[node name="grass5" parent="nature" instance=ExtResource("12_1vc8p")]
+position = Vector2(857, 1252)
+
+[node name="grass6" parent="nature" instance=ExtResource("12_1vc8p")]
+position = Vector2(1390, 1393)
+
+[node name="grass9" parent="nature" instance=ExtResource("12_1vc8p")]
+position = Vector2(2060, 1618)
+
+[node name="grass10" parent="nature" instance=ExtResource("12_1vc8p")]
+position = Vector2(2386, 1698)
+
+[node name="grass11" parent="nature" instance=ExtResource("12_1vc8p")]
+position = Vector2(2305, 1687)
+
+[node name="grass12" parent="nature" instance=ExtResource("12_1vc8p")]
+position = Vector2(2226, 1812)
+
+[node name="grass13" parent="nature" instance=ExtResource("12_1vc8p")]
+position = Vector2(2810, 1453)
+
+[node name="grass14" parent="nature" instance=ExtResource("12_1vc8p")]
+position = Vector2(2618, 1252)
+
+[node name="grass15" parent="nature" instance=ExtResource("12_1vc8p")]
+position = Vector2(2905, 1226)
+
+[node name="grass7" parent="nature" instance=ExtResource("12_1vc8p")]
+position = Vector2(2025, 665)
+
+[node name="grass8" parent="nature" instance=ExtResource("12_1vc8p")]
+position = Vector2(1152, 557)
+
+[node name="flower" parent="nature" instance=ExtResource("13_lq2jo")]
+position = Vector2(2446, 497)
+
+[node name="flower5" parent="nature" instance=ExtResource("13_lq2jo")]
+position = Vector2(2166, 1513)
+
+[node name="flower6" parent="nature" instance=ExtResource("13_lq2jo")]
+position = Vector2(1431, 1567)
+
+[node name="flower7" parent="nature" instance=ExtResource("13_lq2jo")]
+position = Vector2(2143, 1884)
+
+[node name="flower8" parent="nature" instance=ExtResource("13_lq2jo")]
+position = Vector2(2083, 1917)
+
+[node name="flower9" parent="nature" instance=ExtResource("13_lq2jo")]
+position = Vector2(2770, 1627)
+
+[node name="flower2" parent="nature" instance=ExtResource("13_lq2jo")]
+modulate = Color(0.266667, 0.45098, 1, 1)
+position = Vector2(2526, 686)
+
+[node name="flower3" parent="nature" instance=ExtResource("13_lq2jo")]
+position = Vector2(2226, 641)
+
+[node name="flower4" parent="nature" instance=ExtResource("13_lq2jo")]
+modulate = Color(0, 1, 0.384314, 1)
+position = Vector2(1774, 497)
+
+[node name="trees" type="Node2D" parent="."]
+
+[node name="Tree" parent="trees" instance=ExtResource("11_x8qfq")]
+position = Vector2(2480, 1474)
+scale = Vector2(2.30712, 2.94629)
+
+[node name="Tree5" parent="trees" instance=ExtResource("11_x8qfq")]
+position = Vector2(518, 1884)
+scale = Vector2(2.30712, 2.94629)
+
+[node name="Tree8" parent="trees" instance=ExtResource("11_x8qfq")]
+position = Vector2(767, 598)
+scale = Vector2(2.30712, 2.94629)
+
+[node name="Tree6" parent="trees" instance=ExtResource("11_x8qfq")]
+position = Vector2(767, 1917)
+scale = Vector2(2.30712, 2.94629)
+
+[node name="Tree7" parent="trees" instance=ExtResource("11_x8qfq")]
+position = Vector2(682, 1129)
+scale = Vector2(2.30712, 2.94629)
+
+[node name="Tree2" parent="trees" instance=ExtResource("11_x8qfq")]
+position = Vector2(2705, 1072)
+rotation = 3.14159
+scale = Vector2(2, -2.946)
+
+[node name="Tree3" parent="trees" instance=ExtResource("11_x8qfq")]
+position = Vector2(1986, 1393)
+rotation = 3.14159
+scale = Vector2(2, -2.946)
+
+[node name="Tree4" parent="trees" instance=ExtResource("11_x8qfq")]
+position = Vector2(2591, 1854)
+rotation = 3.14159
+scale = Vector2(2, -2.946)
 
 [connection signal="body_entered" from="SecretGate" to="MainCharacter" method="_on_secret_gate_body_entered"]
 [connection signal="body_entered" from="Area2D" to="MainCharacter" method="_on_area_2d_body_entered"]

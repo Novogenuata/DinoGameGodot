@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs7fehll0ekjl"]
+
+[ext_resource type="Texture2D" uid="uid://c8apfljmy14cm" path="res://Assets/spritesheet_18.png" id="1_5a5is"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x11db"]
+atlas = ExtResource("1_5a5is")
+region = Rect2(720, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1prl"]
+atlas = ExtResource("1_5a5is")
+region = Rect2(600, 0, 120, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0e2pc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x11db")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1prl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tree" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_0e2pc")
+autoplay = "default"
+frame_progress = 0.215399

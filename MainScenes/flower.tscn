@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://5yv1s1qjcmlv"]
+
+[ext_resource type="Texture2D" uid="uid://c8apfljmy14cm" path="res://Assets/spritesheet_18.png" id="1_2lfad"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ghv5"]
+atlas = ExtResource("1_2lfad")
+region = Rect2(240, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfn0e"]
+atlas = ExtResource("1_2lfad")
+region = Rect2(120, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0m2jc"]
+atlas = ExtResource("1_2lfad")
+region = Rect2(0, 0, 120, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sw050"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ghv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfn0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0m2jc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="flower" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_sw050")
+autoplay = "default"
+frame_progress = 0.213379
