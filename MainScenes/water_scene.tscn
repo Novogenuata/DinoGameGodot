@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ysngkd6bb7yx"]
+[gd_scene load_steps=9 format=3 uid="uid://ysngkd6bb7yx"]
 
 [ext_resource type="Script" uid="uid://daucxt0wkexko" path="res://Script/water_scene.gd" id="1_o43j3"]
 [ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="1_wib7b"]
 [ext_resource type="Texture2D" uid="uid://df2cstplhaiwd" path="res://Assets/Background/Water.jpeg" id="2_ixydh"]
 [ext_resource type="PackedScene" uid="uid://cchdwf3mwrual" path="res://MainScenes/water_gun.tscn" id="4_dwd6w"]
+[ext_resource type="PackedScene" uid="uid://i3vry1botv1y" path="res://MainScenes/fish.tscn" id="5_0gxso"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_unjqi"]
 radius = 68.1836
@@ -48,6 +49,10 @@ limit_bottom = 393
 [node name="WaterGun" parent="." instance=ExtResource("4_dwd6w")]
 position = Vector2(-10, 218)
 scale = Vector2(1.48, 1.57105)
+
+[node name="fish" parent="." instance=ExtResource("5_0gxso")]
+position = Vector2(374, 239)
+scale = Vector2(4.73794, 2.15361)
 
 [node name="walls" type="Node2D" parent="."]
 visible = false
