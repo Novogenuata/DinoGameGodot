@@ -219,3 +219,4 @@ bus = &"SFX"
 
 [node name="gun2" parent="." instance=ExtResource("8_3ad1k")]
 unique_name_in_owner = true
+z_index = 2
