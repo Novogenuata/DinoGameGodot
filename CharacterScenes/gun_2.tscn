@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://btboikgbxq3c2"]
+
+[ext_resource type="Script" uid="uid://drvndrsqvl4y4" path="res://Script/gun2.gd" id="1_1hj85"]
+[ext_resource type="Texture2D" uid="uid://d1awdxygpqh5o" path="res://Assets/gun2.png" id="2_kiudl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhelb"]
+atlas = ExtResource("2_kiudl")
+region = Rect2(0, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttjgi"]
+atlas = ExtResource("2_kiudl")
+region = Rect2(120, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s32oo"]
+atlas = ExtResource("2_kiudl")
+region = Rect2(240, 0, 120, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4nd2e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhelb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttjgi")
+}],
+"loop": true,
+"name": &"gun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s32oo")
+}],
+"loop": true,
+"name": &"openmouth",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_wngig"]
+offsets = PackedFloat32Array(0, 0.453333, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.78334, 0.886135, 1, 1, 0.876495, 0.987191, 0.985189, 1)
+
+[node name="gun2" type="Node2D"]
+script = ExtResource("1_1hj85")
+
+[node name="GunSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_4nd2e")
+animation = &"gun"
+autoplay = "gun"
+frame_progress = 0.3797
+offset = Vector2(-107.289, 6.286)
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(148, 13)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+preprocess = 0.37
+speed_scale = 4.23
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 5.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+angular_velocity_min = 218.18
+angular_velocity_max = 276.36
+scale_amount_min = 0.0
+scale_amount_max = 5.45
+color_initial_ramp = SubResource("Gradient_wngig")
