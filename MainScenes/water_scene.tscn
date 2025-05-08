@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ysngkd6bb7yx"]
+[gd_scene load_steps=10 format=3 uid="uid://ysngkd6bb7yx"]
 
 [ext_resource type="Script" uid="uid://daucxt0wkexko" path="res://Script/water_scene.gd" id="1_o43j3"]
 [ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="1_wib7b"]
 [ext_resource type="Texture2D" uid="uid://df2cstplhaiwd" path="res://Assets/Background/Water.jpeg" id="2_ixydh"]
 [ext_resource type="PackedScene" uid="uid://cchdwf3mwrual" path="res://MainScenes/water_gun.tscn" id="4_dwd6w"]
 [ext_resource type="PackedScene" uid="uid://i3vry1botv1y" path="res://MainScenes/fish.tscn" id="5_0gxso"]
+[ext_resource type="PackedScene" uid="uid://bagtlegoc6rlv" path="res://collectableScenes/shiny.tscn" id="6_dfkbc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_unjqi"]
 radius = 68.1836
@@ -37,6 +38,7 @@ position = Vector2(-3, 5)
 shape = SubResource("CircleShape2D_unjqi")
 
 [node name="MainCharacter" parent="." instance=ExtResource("1_wib7b")]
+visible = false
 
 [node name="cameracontroller" type="Camera2D" parent="MainCharacter"]
 position = Vector2(-15, -9)
@@ -69,5 +71,8 @@ shape = SubResource("RectangleShape2D_dwd6w")
 position = Vector2(1285, 714.001)
 scale = Vector2(5.11161, 379.604)
 shape = SubResource("RectangleShape2D_0gxso")
+
+[node name="shiny" parent="." instance=ExtResource("6_dfkbc")]
+position = Vector2(377, 243)
 
 [connection signal="body_entered" from="exitgate" to="." method="_on_exitgate_body_entered"]

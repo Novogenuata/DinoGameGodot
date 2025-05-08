@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://domf0yrtfc88b"]
+[gd_scene load_steps=5 format=3 uid="uid://domf0yrtfc88b"]
 
 [ext_resource type="Script" uid="uid://fsq53xpecaly" path="res://Script/main_menu.gd" id="1_rqe8y"]
 [ext_resource type="Texture2D" uid="uid://c51i808o31cpe" path="res://Assets/Background/maimenubackground.png" id="2_rqe8y"]
 [ext_resource type="Theme" uid="uid://ct3gsjqfkb4hm" path="res://Assets/themes/vintagetheme.tres" id="3_qnbo1"]
+[ext_resource type="AudioStream" uid="uid://b66bjvgogdj6s" path="res://Assets/Audio/the_field_of_dreams (1).mp3" id="4_gnxq4"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -56,6 +57,11 @@ text = "English"
 [node name="french" type="Button" parent="CanvasLayer/elements/buttons"]
 layout_mode = 2
 text = "French"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_gnxq4")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="CanvasLayer/elements/buttons/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/elements/buttons/settings" to="." method="_on_settings_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bl4008rq2b8p0"]
+[gd_scene load_steps=23 format=3 uid="uid://bl4008rq2b8p0"]
 
 [ext_resource type="Script" uid="uid://1axavau2ungs" path="res://MainScenes/Main.gd" id="1_0avsm"]
 [ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="1_52se3"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bhu2uoihyyhew" path="res://MainScenes/grass.tscn" id="12_1vc8p"]
 [ext_resource type="PackedScene" uid="uid://5yv1s1qjcmlv" path="res://MainScenes/flower.tscn" id="13_lq2jo"]
 [ext_resource type="PackedScene" uid="uid://bagtlegoc6rlv" path="res://collectableScenes/shiny.tscn" id="14_yehpv"]
+[ext_resource type="AudioStream" uid="uid://b66bjvgogdj6s" path="res://Assets/Audio/the_field_of_dreams (1).mp3" id="15_v1rvh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yeuv3"]
 shader = ExtResource("5_yeuv3")
@@ -281,6 +282,11 @@ scale = Vector2(2, -2.946)
 
 [node name="shiny" parent="." instance=ExtResource("14_yehpv")]
 position = Vector2(840, 1707)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_v1rvh")
+autoplay = true
+bus = &"Music"
 
 [connection signal="body_entered" from="SecretGate" to="MainCharacter" method="_on_secret_gate_body_entered"]
 [connection signal="body_entered" from="Area2D" to="MainCharacter" method="_on_area_2d_body_entered"]
