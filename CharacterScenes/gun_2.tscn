@@ -50,7 +50,7 @@ scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_4nd2e")
 animation = &"gun"
 autoplay = "gun"
-frame_progress = 0.3797
+frame_progress = 0.0135921
 offset = Vector2(-107.289, 6.286)
 
 [node name="Muzzle" type="Marker2D" parent="."]

@@ -19,6 +19,10 @@ var current_health: int
 var spawn_position: Vector2
 
 
+@onready var weapon1 = %gun
+@onready var weapon2 = %gun2
+var using_weapon2: bool = false
+
 
 # Store original positions
 var finder_original_x
@@ -31,6 +35,7 @@ func _ready():
 	actfinder_original_x = Actfinder.position.x
 	current_health = max_health
 	spawn_hearts()
+	_update_weapon_visibility()
 
 func get_input():
 	var input_dir = Input.get_vector("left", "right", "up", "down")
@@ -55,6 +60,9 @@ func get_input():
 		if actionables.size() > 0:
 			actionables[0].action()
 			return
+	if Input.is_action_just_pressed("switch"):
+		using_weapon2 = not using_weapon2
+		_update_weapon_visibility()
 
 func _physics_process(delta):
 	get_input()
@@ -145,3 +153,10 @@ func spawn_hearts():
 		var heart = heart_scene.instantiate()
 		heart_bar.add_child(heart)
 		heart_nodes.append(heart)
+		
+func _update_weapon_visibility() -> void:
+	weapon1.visible = not using_weapon2
+	weapon2.visible = using_weapon2
+	# disable their own processing so only the active one reacts to input
+	weapon1.set_process(!using_weapon2)
+	weapon2.set_process(using_weapon2)

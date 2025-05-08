@@ -1,4 +1,5 @@
 extends Node2D
+class_name gun
 
 @export var bob_speed = 20.0
 @export var bob_amount = 3.0
