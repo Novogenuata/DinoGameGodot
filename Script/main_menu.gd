@@ -1,19 +1,17 @@
 extends Control
 
+func _ready():
+	# Load settings (language and volume) when the main menu is ready
+	AudioManager.load_settings()
 
 func _on_play_pressed() -> void:
-	#changes to game
+	# Change to game scene
 	SceneManager.change_scene("res://MainScenes/MainGame.tscn")
-	
-
 
 func _on_exit_pressed() -> void:
-	#closes
+	# Close the game
 	get_tree().quit()
-	pass # Replace with function body.
-
 
 func _on_settings_pressed() -> void:
-	#change to settings menu
+	# Change to settings menu
 	SceneManager.change_scene("res://MainScenes/settings_menu.tscn")
-	pass # Replace with function body.

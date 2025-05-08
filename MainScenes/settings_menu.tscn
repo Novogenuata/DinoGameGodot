@@ -52,6 +52,7 @@ layout_mode = 2
 text = "Master"
 
 [node name="masterslider" type="HScrollBar" parent="CanvasLayer/MarginContainer/VBoxContainer/Master" groups=["scene_manager_entity_nodes"]]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -64,6 +65,7 @@ layout_mode = 2
 text = "Music"
 
 [node name="musicslider" type="HScrollBar" parent="CanvasLayer/MarginContainer/VBoxContainer/Music"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -73,12 +75,26 @@ layout_mode = 2
 
 [node name="SFX" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/soundeffects"]
 layout_mode = 2
-text = "Music"
+text = "SFX"
 
 [node name="sfxslider" type="HScrollBar" parent="CanvasLayer/MarginContainer/VBoxContainer/soundeffects"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+
+[node name="English" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "English"
+
+[node name="French" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "French"
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
 
 [node name="savebutton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -93,4 +109,6 @@ bus = &"Music"
 [connection signal="value_changed" from="CanvasLayer/MarginContainer/VBoxContainer/Master/masterslider" to="." method="_on_masterslider_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/MarginContainer/VBoxContainer/Music/musicslider" to="." method="_on_musicslider_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/MarginContainer/VBoxContainer/soundeffects/sfxslider" to="." method="_on_sfxslider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/English" to="." method="_on_english_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/French" to="." method="_on_french_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/savebutton" to="." method="_on_savebutton_pressed"]
