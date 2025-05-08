@@ -9,6 +9,9 @@ extends CharacterBody2D
 @onready var heart_bar = %HeartBar
 @export var heart_scene = preload("res://MainScenes/heart_container.tscn")
 
+@onready var hit_sound = $HitSound
+
+
 @export var max_health: int = 5 
 var invincible: bool = false
 
@@ -82,6 +85,10 @@ func take_damage(amount: int) -> void:
 	if invincible:
 		return
 	invincible = true
+	
+	# Play the hit sound
+	hit_sound.play()
+	
 	current_health -= amount
 	for i in range(amount):
 		if heart_nodes.size() > 0:
@@ -91,7 +98,6 @@ func take_damage(amount: int) -> void:
 	if current_health <= 0:
 		_respawn()
 		return
-	# start invincibility countdown (no extra node needed)
 	await get_tree().create_timer(invincibility_time).timeout 
 	invincible = false
 	print("Vulnerable again")

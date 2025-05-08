@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://hociavgdvmp8"]
+[gd_scene load_steps=30 format=3 uid="uid://hociavgdvmp8"]
 
 [ext_resource type="Script" uid="uid://bttx1yaxqg6jd" path="res://Script/main_character.gd" id="1_k3bda"]
 [ext_resource type="Texture2D" uid="uid://cdi7cew3pjrn6" path="res://Assets/BirdSpriteIdle.png" id="2_em4rc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ch4ll4hdeqwkp" path="res://Assets/spritesheetbirdbonefish.png" id="4_6ykam"]
 [ext_resource type="PackedScene" uid="uid://clfkxopied47n" path="res://CharacterScenes/gun.tscn" id="4_h0mrn"]
 [ext_resource type="PackedScene" uid="uid://bi5b41acyh5aa" path="res://collectableScenes/coin_label_count.tscn" id="6_x0qg0"]
+[ext_resource type="AudioStream" uid="uid://cedmcupaa47ty" path="res://Assets/Audio/hurt.wav" id="7_4hf2r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h0mrn"]
 atlas = ExtResource("2_em4rc")
@@ -209,3 +210,7 @@ anchor_right = 1.0
 grow_horizontal = 0
 size_flags_stretch_ratio = 5.0
 theme_override_constants/separation = 31
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_4hf2r")
+bus = &"SFX"
