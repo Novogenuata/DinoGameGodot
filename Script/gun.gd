@@ -6,6 +6,7 @@ class_name gun
 
 @export var bob_speed_idle = 10.0
 @export var bob_amount_idle = 2.0
+@export var cooldown = 0.3
 
 const bullet = preload("res://CharacterScenes/bullet.tscn")
 
@@ -18,6 +19,7 @@ var time_passed = 0.0
 var original_position  
 var original_rotation  
 var is_shooting = false 
+var cooldown_timer = 0.0
 
 func _ready():
 	original_position = gun_sprite.position  
@@ -32,6 +34,10 @@ func _process(delta: float) -> void:
 		scale.y = -1
 	else:
 		scale.y = 1
+		
+		
+	if cooldown_timer > 0.0:
+		cooldown_timer -= delta
 
 	# Check if shooting stopped and return to idle animation
 	if !Input.is_action_pressed("shoot") and is_shooting:
@@ -39,12 +45,13 @@ func _process(delta: float) -> void:
 		is_shooting = false
 	
 	# Handle shooting
-	if Input.is_action_just_pressed("shoot") and !is_shooting:
+	if Input.is_action_pressed("shoot") and cooldown_timer <= 0.0:
 		apply_recoil()
 		spawn_bullet()
 		spawn_muzzle_flash()
-		gun_animation.play("openmouth")  # Play the openmouth animation when shooting
+		gun_animation.play("openmouth")
 		is_shooting = true
+		cooldown_timer = cooldown
 
 	# Bobbing effect
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):

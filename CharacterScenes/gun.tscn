@@ -58,6 +58,7 @@ colors = PackedColorArray(1, 1, 1, 1, 0.78334, 0.886135, 1, 1, 0.876495, 0.98719
 [node name="gun" type="Node2D"]
 z_index = 10
 script = ExtResource("1_yh38k")
+cooldown = 0.5
 
 [node name="GunSprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

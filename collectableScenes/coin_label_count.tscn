@@ -5,6 +5,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_m8ihs"]
 font = ExtResource("2_hj8mf")
+font_size = 28
 
 [node name="CoinLabelCount" type="Control"]
 layout_mode = 3
