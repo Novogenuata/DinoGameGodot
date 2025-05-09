@@ -1,7 +1,9 @@
 extends Node
 
-# Default settings file path
-const SETTINGS_FILE := "user://ui_settings.cfg"
+#const SETTINGS_FILE := "user://ui_settings.cfg"
+#const SAVE_FILE := "user://ui_savegame.json"
+const SETTINGS_FILE := "C:/Users/adm1/OneDrive - Champlain Regional College/Documents/ui_settings.cfg"
+const SAVE_FILE := "C:/Users/adm1/OneDrive - Champlain Regional College/Documents/ui_savegame.json"
 
 var settings := {
 	"audio": {
@@ -13,7 +15,7 @@ var settings := {
 		"fullscreen": false,
 		"resolution": "1920x1080"
 	},
-	"language": {  
+	"language": {  # 🔹 Added missing language category
 		"selected": "en"
 	},
 	"controls": {
@@ -36,11 +38,16 @@ enum DIFFICULTY {
 var current_game_difficulty: DIFFICULTY
 var difficulty_label = ["EASY", "NORMAL", "HARD"]
 
+var save_data := {}
 var config = ConfigFile.new()
+
 
 # Called when the autoload initializes
 func _ready():
 	load_settings()
+	load_game()
+	print("Settings file path:", SETTINGS_FILE)
+	print("Save file path:", SAVE_FILE)
 
 # ========== SETTINGS MANAGEMENT ==========
 
@@ -56,13 +63,6 @@ func set_setting(category: String, key: String, value):
 
 # Save settings to a file
 func save_settings():
-	# Update audio settings to match the values from AudioManager
-	settings["audio"]["music"] = AudioManager.volumes["music"]
-	settings["audio"]["sfx"] = AudioManager.volumes["sfx"]
-	settings["audio"]["voice"] = AudioManager.volumes.get("voice", 1.0) # if you have voice audio
-	settings["language"]["selected"] = TranslationServer.get_locale() # Store the current language
-
-	# Save all settings to file
 	for category in settings.keys():
 		for key in settings[category].keys():
 			config.set_value(category, key, settings[category][key])
@@ -76,12 +76,32 @@ func load_settings():
 			for key in settings[category].keys():
 				settings[category][key] = config.get_value(category, key, settings[category][key])
 		print("Loaded settings:", settings)
-		# Apply loaded settings (audio, language, etc.)
-		AudioManager.volumes["music"] = settings["audio"]["music"]
-		AudioManager.volumes["sfx"] = settings["audio"]["sfx"]
-		AudioManager.volumes["voice"] = settings["audio"].get("voice", 1.0)
-		AudioManager.apply_volumes()
-
-		TranslationServer.set_locale(settings["language"]["selected"])
 	else:  
-		print("No settings file found. Using default settings.")
+		print("no settingssaved file found use default settings")
+# ========== SAVE / LOAD GAME DATA ==========
+
+# Save game data to a JSON file
+func save_game():
+	var file = FileAccess.open(SAVE_FILE, FileAccess.WRITE)
+	if file:
+		file.store_string(JSON.stringify(save_data, "\t"))
+		file.close()
+		
+
+# Load game data from a JSON file
+func load_game():
+	if FileAccess.file_exists(SAVE_FILE):
+		var file = FileAccess.open(SAVE_FILE, FileAccess.READ)
+		if file:
+			var content = file.get_as_text()
+			var parsed = JSON.parse_string(content)
+			print("parsed content found :", content)
+			if parsed is Dictionary:
+				save_data = parsed
+			file.close()
+			print("save data is -> ", JSON.stringify(save_data))
+
+# Reset save data
+func reset_game_data():
+	save_data = {}
+	save_game()
