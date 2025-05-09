@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpi5s58ap4jl6"]
+[gd_scene load_steps=5 format=3 uid="uid://bpi5s58ap4jl6"]
 
 [ext_resource type="Texture2D" uid="uid://r0mh3frekp8q" path="res://Assets/Background/bgflower.png" id="1_jpqiq"]
 [ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="2_tna28"]
 [ext_resource type="PackedScene" uid="uid://cbjnwx6wvqkq3" path="res://MainScenes/level_logic.tscn" id="3_kady8"]
+[ext_resource type="AudioStream" uid="uid://cxn1k3msxthp1" path="res://Assets/Audio/Quirky Boss Loop.wav" id="4_tna28"]
 
 [node name="Infini_flowerlands" type="Node2D"]
 
@@ -24,3 +25,7 @@ region_rect = Rect2(0, 0, 3000, 3000)
 max_health = 3
 
 [node name="LevelLogic" parent="." instance=ExtResource("3_kady8")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_tna28")
+autoplay = true
