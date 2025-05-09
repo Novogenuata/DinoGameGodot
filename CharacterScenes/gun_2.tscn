@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://btboikgbxq3c2"]
 
-[ext_resource type="Script" path="res://Script/gun2.gd" id="1_1hj85"]
+[ext_resource type="Script" uid="uid://drvndrsqvl4y4" path="res://Script/gun2.gd" id="1_1hj85"]
 [ext_resource type="Texture2D" uid="uid://d1awdxygpqh5o" path="res://Assets/gun2.png" id="2_kiudl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhelb"]
