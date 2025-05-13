@@ -2,6 +2,9 @@ extends Node
 
 @export var level: int = 1
 
+@export var difficulty_multiplier: float = 1.0
+
+
 @onready var timer = $LevelTimer
 @onready var player = $"../MainCharacter"
 @onready var enemy_interval = $EnemyInterval
@@ -52,6 +55,10 @@ func spawn_slime(slime):
 	get_tree().root.add_child(slime_instance)
 	var random_spawn = spawnpoints.get_children()[randi_range(0, 3)]
 	slime_instance.global_position = random_spawn.global_position
+
+	if slime_instance.has_method("set_difficulty"):
+		slime_instance.set_difficulty(difficulty_multiplier)
+
 	
 func cooldown():
 	timer.start()
