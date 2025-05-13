@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://digs4nn8fwx83"]
+
+[ext_resource type="Texture2D" uid="uid://b30fxtsubnkai" path="res://Assets/sign.png" id="1_4xtej"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_waxqr"]
+atlas = ExtResource("1_4xtej")
+region = Rect2(0, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwbgu"]
+atlas = ExtResource("1_4xtej")
+region = Rect2(120, 0, 120, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2jo71"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_waxqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwbgu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="lvl2sign" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2jo71")
+autoplay = "default"

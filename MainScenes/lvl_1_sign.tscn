@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://r2bveo6bcy8v"]
+
+[ext_resource type="Texture2D" uid="uid://b30fxtsubnkai" path="res://Assets/sign.png" id="1_rhiwd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym1f1"]
+atlas = ExtResource("1_rhiwd")
+region = Rect2(240, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5ups"]
+atlas = ExtResource("1_rhiwd")
+region = Rect2(360, 0, 120, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5rh66"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ym1f1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5ups")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="lvl1sign" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_5rh66")
+autoplay = "default"
+frame_progress = 0.631331

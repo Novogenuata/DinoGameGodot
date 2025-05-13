@@ -84,7 +84,7 @@ func _die():
 	get_parent().add_child(coin_instance)
 	coin_instance.global_position = global_position
 
-	# 5% chance to drop a health pickup
+
 	if randi() % 100 < 5:
 		var health_instance = HealthPickup.instantiate()
 		get_parent().add_child(health_instance)
@@ -100,7 +100,6 @@ func set_difficulty(multiplier: float = 1.0):
 	if multiplier <= 1.0:
 		return
 
-	# Set base values only if they haven't been set yet
 	if base_health == 0:
 		base_health = health
 	if base_movement_speed == 0:

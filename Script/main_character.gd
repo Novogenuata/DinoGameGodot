@@ -79,7 +79,9 @@ func _on_secret_gate_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		#change to the water scene with the water gun
+		if CoinManager.coin_count > 20:
+			print("You have %d coins—too many to enter, go to the next level!" % CoinManager.coin_count)
+			return
 		SceneManager.change_scene("res://infinite_marshlands.tscn")
 
 

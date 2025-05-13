@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bl4008rq2b8p0"]
+[gd_scene load_steps=26 format=3 uid="uid://bl4008rq2b8p0"]
 
 [ext_resource type="Script" uid="uid://1axavau2ungs" path="res://MainScenes/Main.gd" id="1_0avsm"]
 [ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="1_52se3"]
@@ -15,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://5yv1s1qjcmlv" path="res://MainScenes/flower.tscn" id="13_lq2jo"]
 [ext_resource type="PackedScene" uid="uid://bagtlegoc6rlv" path="res://collectableScenes/shiny.tscn" id="14_yehpv"]
 [ext_resource type="AudioStream" uid="uid://b66bjvgogdj6s" path="res://Assets/Audio/the_field_of_dreams (1).mp3" id="15_v1rvh"]
+[ext_resource type="PackedScene" uid="uid://r2bveo6bcy8v" path="res://MainScenes/lvl_1_sign.tscn" id="16_68rfi"]
+[ext_resource type="PackedScene" uid="uid://digs4nn8fwx83" path="res://MainScenes/lvl_2_sign.tscn" id="17_kjdva"]
+[ext_resource type="PackedScene" uid="uid://i4jb72gn7o54" path="res://MainScenes/gate.tscn" id="18_kjdva"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yeuv3"]
 shader = ExtResource("5_yeuv3")
@@ -288,6 +291,16 @@ stream = ExtResource("15_v1rvh")
 autoplay = true
 max_distance = 9.22337e+18
 bus = &"Music"
+
+[node name="lvl1sign" parent="." instance=ExtResource("16_68rfi")]
+position = Vector2(1680, 1019)
+
+[node name="lvl2sign" parent="." instance=ExtResource("17_kjdva")]
+position = Vector2(1917, 1018)
+
+[node name="gate" parent="." instance=ExtResource("18_kjdva")]
+position = Vector2(2851, 887)
+scale = Vector2(2.76, 2.68)
 
 [connection signal="body_entered" from="SecretGate" to="MainCharacter" method="_on_secret_gate_body_entered"]
 [connection signal="body_entered" from="Area2D" to="MainCharacter" method="_on_area_2d_body_entered"]

@@ -4,6 +4,8 @@ extends Node
 
 @export var difficulty_multiplier: float = 1.0
 
+@export var max_coins: int = 40
+
 
 @onready var timer = $LevelTimer
 @onready var player = $"../MainCharacter"
@@ -19,6 +21,8 @@ const tank_slime = preload("res://CharacterScenes/tank_slime.tscn")
 
 func _ready():
 	cooldown()
+	CoinManager.connect("coin_count_changed", Callable(self, "_on_coin_count_changed"))
+	
 
 func _process(delta: float):
 	self.global_position = player.global_position
@@ -64,3 +68,12 @@ func cooldown():
 	timer.start()
 	await timer.timeout
 	new_level()
+	
+func _on_coin_count_changed(count: int):
+	if count > max_coins:
+		print("Exceeded max coins (%d)! going back" % max_coins)
+		kickout()
+		
+func kickout():
+	SceneManager.change_scene("res://MainScenes/MainGame.tscn")
+	Globalmanager.emit_signal("player_died")

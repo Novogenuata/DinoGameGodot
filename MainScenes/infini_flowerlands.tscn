@@ -26,6 +26,7 @@ max_health = 3
 
 [node name="LevelLogic" parent="." instance=ExtResource("3_kady8")]
 difficulty_multiplier = 2.0
+max_coins = 999999
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_tna28")
