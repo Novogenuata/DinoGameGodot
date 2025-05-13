@@ -81,7 +81,7 @@ func _die():
 	explosion_instance.global_position = global_position
 
 	var coin_instance = Coin.instantiate()
-	get_parent().add_child(coin_instance)
+	get_tree().get_current_scene().add_child(coin_instance)
 	coin_instance.global_position = global_position
 
 
@@ -105,5 +105,5 @@ func set_difficulty(multiplier: float = 1.0):
 	if base_movement_speed == 0:
 		base_movement_speed = movement_speed
 
-	health = int(base_health * multiplier)
+	health = int(base_health + 1)
 	movement_speed = int(base_movement_speed * multiplier)
