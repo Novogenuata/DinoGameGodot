@@ -101,22 +101,31 @@ func take_damage(amount: int) -> void:
 	if invincible:
 		return
 	invincible = true
-	
-	# Play the hit sound
 	hit_sound.play()
-	
+
+	# Subtract health and remove heart icons
 	current_health -= amount
 	for i in range(amount):
 		if heart_nodes.size() > 0:
-			var heart = heart_nodes.pop_back()
-			heart.queue_free()
+			heart_nodes.pop_back().queue_free()
 	print("Hit! health=", current_health)
 	if current_health <= 0:
 		_respawn()
 		return
-	await get_tree().create_timer(invincibility_time).timeout 
+
+	# Flash loop
+	var elapsed := 0.0
+	var flash_time := 0.1
+	while elapsed < invincibility_time:
+		sprite.modulate.a = 0.2
+		await get_tree().create_timer(flash_time).timeout
+		sprite.modulate.a = 1.0
+		await get_tree().create_timer(flash_time).timeout
+		elapsed += flash_time * 2
+
 	invincible = false
 	print("Vulnerable again")
+
 		
 		
 func heal(amount: int) -> void:
