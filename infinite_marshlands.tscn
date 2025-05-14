@@ -24,8 +24,10 @@ region_rect = Rect2(0, 0, 3000, 3000)
 region_filter_clip_enabled = true
 
 [node name="LevelLogic" parent="." instance=ExtResource("3_1qajm")]
+max_coins = 39
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_1qajm")
 autoplay = true
+max_distance = 9.22337e+18
 bus = &"Music"

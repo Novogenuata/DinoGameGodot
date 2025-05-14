@@ -3,6 +3,9 @@ extends CharacterBody2D
 @export var health: int
 @export var movement_speed: int
 
+var base_health: int
+var base_movement_speed: int
+
 @onready var player = get_tree().get_nodes_in_group("player")[0]
 var anim_sprite: AnimatedSprite2D = null
 var can_damage: bool = true
@@ -15,6 +18,8 @@ var attack_timer: Timer
 @export var HealthPickup = preload("res://collectableScenes/healthy_pork.tscn")
 
 func _ready():
+	base_health = health
+	base_movement_speed = movement_speed
 	anim_sprite = _find_first_animated_sprite(self) 
 	if Globalmanager.has_signal("player_died"):
 		Globalmanager.connect("player_died", Callable(self, "_on_player_died"))
@@ -76,10 +81,10 @@ func _die():
 	explosion_instance.global_position = global_position
 
 	var coin_instance = Coin.instantiate()
-	get_parent().add_child(coin_instance)
+	get_tree().get_current_scene().add_child(coin_instance)
 	coin_instance.global_position = global_position
 
-	# 5% chance to drop a health pickup
+
 	if randi() % 100 < 5:
 		var health_instance = HealthPickup.instantiate()
 		get_parent().add_child(health_instance)
@@ -90,3 +95,15 @@ func _die():
 	
 func _on_player_died() -> void:
 	queue_free()
+	
+func set_difficulty(multiplier: float = 1.0):
+	if multiplier <= 1.0:
+		return
+
+	if base_health == 0:
+		base_health = health
+	if base_movement_speed == 0:
+		base_movement_speed = movement_speed
+
+	health = int(base_health + 1)
+	movement_speed = int(base_movement_speed * multiplier)
