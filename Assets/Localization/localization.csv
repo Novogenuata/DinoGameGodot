@@ -1,0 +1,21 @@
+key,en,fr
+intro_1,"The Pork: Welcome traveller! No time to talk, [wave amp=25 freq=5]giant bugs[/wave] are attacking our beautiful town!","Le Porc : Bienvenue voyageur ! Pas le temps de parler, des [wave amp=25 freq=5]insectes géants[/wave] attaquent notre belle ville !"
+intro_2,The Pork: The guard is too lazy to help. [shake rate=20 level=10]Please help us![/shake],"Le Porc : Le garde est trop paresseux pour aider. [shake rate=20 level=10]S'il vous plaît, aidez-nous ![/shake]"
+option_help,- What can I do to help?,- Que puis-je faire pour aider ?
+help_1,The Pork: Go into the first area and mess up as many bugs as you can.,Le Porc : Allez dans la première zone et éliminez autant d'insectes que possible.
+help_2,"The Pork: Use W A S D to control the character and your mouse to control the gun. Use the left mouse button to shoot! Don't forget to press ""M"" on your keyboard to switch your default weapon.",Le Porc : Utilisez W A S D pour déplacer le personnage et la souris pour contrôler l'arme. Cliquez avec le bouton gauche pour tirer ! N'oubliez pas d'appuyer sur « M » pour changer votre arme par défaut.
+help_3,The Pork: The bugs will drop [wave amp=25 freq=5]coins[/wave] and sometimes [wave amp=25 freq=5]pork[/wave]. The pork will heal you!,Le Porc : Les insectes laisseront tomber des [wave amp=25 freq=5]pièces[/wave] et parfois du [wave amp=25 freq=5]porc[/wave]. Le porc vous soignera !
+help_4,"The Pork: Once you accumulate[wave amp=25 freq=5] 20[/wave] coins, proceed to the next area.","Le Porc : Une fois que vous avez [wave amp=25 freq=5]20[/wave] pièces, passez à la zone suivante."
+help_5,"The Pork: Once you get[wave amp=25 freq=5] 300 [/wave]coins, talk to the guard for a surprise!","Le Porc : Quand vous aurez [wave amp=25 freq=5]300[/wave] pièces, parlez au garde pour une surprise !"
+help_6,"The pork: Don't be afraid to faint, you'll be carried back here.","Le Porc : N'ayez pas peur de vous évanouir, vous serez ramené ici."
+option_goodbye,- Goodbye!,- Au revoir !
+goodbye_1,The Pork: [shake rate=20 level=10]Please save the town![/shake],"Le Porc : [shake rate=20 level=10]S'il vous plaît, sauvez la ville ![/shake]"
+menu_play,Play,Jouer
+menu_settings,Settings,Paramètres
+menu_quit,Quit,Quitter
+menu_english,English,Anglais
+menu_french,French,Français
+menu_master,Master,Principal
+menu_music,Music,Musique
+menu_sfx,SFX,Effets sonores
+menu_save,Save settings,Sauvegarder les paramètres
