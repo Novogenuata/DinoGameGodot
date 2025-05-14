@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfp762j401igw"]
+
+[ext_resource type="Script" uid="uid://dgwavfn46so42" path="res://Script/watergunactual.gd" id="1_13ry5"]
+[ext_resource type="Texture2D" uid="uid://dd2bc1uy8e7ve" path="res://Assets/WaterGun.png" id="2_8jya4"]
+
+[sub_resource type="Gradient" id="Gradient_a07jg"]
+offsets = PackedFloat32Array(0, 0.56, 1)
+colors = PackedColorArray(0.410695, 0.731956, 0.716924, 1, 0.798185, 0.551965, 0.941005, 1, 0.419813, 0.419813, 0.419813, 1)
+
+[node name="gun3" type="Node2D"]
+script = ExtResource("1_13ry5")
+cooldown = 0.05
+use_animations = false
+
+[node name="GunSprite" type="Sprite2D" parent="."]
+position = Vector2(95, 4)
+scale = Vector2(-1, 1)
+texture = ExtResource("2_8jya4")
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(150, -1)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+preprocess = 0.37
+speed_scale = 4.32
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 5.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+angular_velocity_min = 58.0
+angular_velocity_max = 218.0
+scale_amount_min = 0.0
+scale_amount_max = 5.45
+color = Color(0.0936916, 0.5481, 0.784547, 1)
+color_ramp = SubResource("Gradient_a07jg")
