@@ -1,0 +1,16 @@
+~ start
+
+Brute Rex: [speed=0.2][wave amp=25 freq=5]YAWWWWWWWWWWWWWWN[/wave][speed=1] You're going to need [wave amp=25 freq=5]20[/wave] coins to pass little guy, go back and collect some.
+- I already have 20 coins
+	Brute Rex: The gate should be open for you, if not you're lying.
+	
+
+- Why don't you do your job?
+	Brute Rex: They don't pay me enough.
+	- alright....
+		Brute Rex: Like, they're not paying me at all. There's only one other dude who lives here. Does he expect me to be his own personal bodyguard or something?
+		- I get your point.
+	
+- Goodbye!
+	Brute Rex: So long, par'ner. 
+	=> END

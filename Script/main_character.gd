@@ -36,6 +36,8 @@ func _ready():
 	current_health = max_health
 	spawn_hearts()
 	_update_weapon_visibility()
+	
+
 
 func get_input():
 	var input_dir = Input.get_vector("left", "right", "up", "down")
@@ -159,6 +161,6 @@ func spawn_hearts():
 func _update_weapon_visibility() -> void:
 	weapon1.visible = not using_weapon2
 	weapon2.visible = using_weapon2
-	# disable their own processing so only the active one reacts to input
+	
 	weapon1.set_process(!using_weapon2)
 	weapon2.set_process(using_weapon2)

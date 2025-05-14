@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkofl5t5opym7"]
+
+[ext_resource type="Script" uid="uid://b07xtxifg4y3t" path="res://Interactable_Components/pigactionble.gd" id="1_em06y"]
+
+[node name="pigactionble" type="Area2D"]
+script = ExtResource("1_em06y")

@@ -11,6 +11,12 @@ func add_coin():
 	update_label()
 	emit_signal("coin_count_changed", coin_count)
 
+
 func update_label():
 	if label_node:
 		label_node.text = str("Coins: ", coin_count)
+		
+
+
+	
+	

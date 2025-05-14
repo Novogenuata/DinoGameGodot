@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://et84gw8l2fwp"]
+
+[ext_resource type="Script" uid="uid://bbf3o170t5nn6" path="res://Interactable_Components/t_rex_actionable.gd" id="1_hsrxv"]
+
+[node name="tRexActionable" type="Area2D"]
+script = ExtResource("1_hsrxv")
