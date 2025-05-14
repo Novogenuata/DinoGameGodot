@@ -23,6 +23,7 @@ AudioManager="*res://Script/AudioManager.gd"
 CoinManager="*res://Script/CoinManager.gd"
 Globalmanager="*res://Script/globalmanager.gd"
 SettingsManager="*res://Script/setting_manager.gd"
+Dialogueclickmanager="*res://Script/dialogueclickmanager.gd"
 
 [editor]
 

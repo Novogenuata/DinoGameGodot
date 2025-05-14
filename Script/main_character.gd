@@ -40,6 +40,10 @@ func _ready():
 
 
 func get_input():
+	if Dialogueclickmanager.is_dialogue_active:
+		velocity = Vector2.ZERO
+		sprite.play("Idle")
+		return
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	velocity = input_dir * speed
 
