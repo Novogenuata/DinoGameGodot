@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bl4008rq2b8p0"]
+[gd_scene load_steps=33 format=3 uid="uid://bl4008rq2b8p0"]
 
 [ext_resource type="Script" uid="uid://1axavau2ungs" path="res://MainScenes/Main.gd" id="1_0avsm"]
 [ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="1_52se3"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://r2bveo6bcy8v" path="res://MainScenes/lvl_1_sign.tscn" id="16_68rfi"]
 [ext_resource type="PackedScene" uid="uid://digs4nn8fwx83" path="res://MainScenes/lvl_2_sign.tscn" id="17_kjdva"]
 [ext_resource type="PackedScene" uid="uid://i4jb72gn7o54" path="res://MainScenes/gate.tscn" id="18_kjdva"]
+[ext_resource type="Texture2D" uid="uid://cwo1ryjkcbo3i" path="res://Assets/20col.png" id="21_ju7xu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yeuv3"]
 shader = ExtResource("5_yeuv3")
@@ -57,6 +58,28 @@ size = Vector2(14.6975, 298.232)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x8qfq"]
 size = Vector2(222.5, 237)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdvhl"]
+atlas = ExtResource("21_ju7xu")
+region = Rect2(0, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pfe5"]
+atlas = ExtResource("21_ju7xu")
+region = Rect2(120, 0, 120, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ddu2n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdvhl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pfe5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_0avsm")
@@ -321,6 +344,13 @@ position = Vector2(1917, 1018)
 [node name="gate" parent="." instance=ExtResource("18_kjdva")]
 position = Vector2(2851, 887)
 scale = Vector2(2.76, 2.68)
+
+[node name="20col" type="AnimatedSprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(648, 904)
+sprite_frames = SubResource("SpriteFrames_ddu2n")
+autoplay = "default"
 
 [connection signal="body_entered" from="SecretGate" to="MainCharacter" method="_on_secret_gate_body_entered"]
 [connection signal="body_entered" from="Area2D" to="MainCharacter" method="_on_area_2d_body_entered"]
