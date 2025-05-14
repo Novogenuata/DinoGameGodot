@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bts3i4036opu4"
+path="res://.godot/imported/Temple in the A b y s s.mp3-dd51a45a11b2b9e20e2b7e36f31ec29b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Temple in the A b y s s.mp3"
+dest_files=["res://.godot/imported/Temple in the A b y s s.mp3-dd51a45a11b2b9e20e2b7e36f31ec29b.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
