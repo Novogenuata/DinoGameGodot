@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bl4008rq2b8p0"]
+[gd_scene load_steps=29 format=3 uid="uid://bl4008rq2b8p0"]
 
 [ext_resource type="Script" uid="uid://1axavau2ungs" path="res://MainScenes/Main.gd" id="1_0avsm"]
 [ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="1_52se3"]
@@ -8,9 +8,10 @@
 [ext_resource type="Shader" uid="uid://si0hmnhjaio8" path="res://new_shader.gdshader" id="5_yeuv3"]
 [ext_resource type="Texture2D" uid="uid://c2utv5mnf5djj" path="res://icon.svg" id="6_k4tsb"]
 [ext_resource type="PackedScene" uid="uid://i3vry1botv1y" path="res://MainScenes/fish.tscn" id="8_3wtxv"]
+[ext_resource type="PackedScene" uid="uid://ciph73t0thlv0" path="res://CharacterScenes/interactlabel.tscn" id="8_m36gs"]
 [ext_resource type="Texture2D" uid="uid://bqm8gh4n5ra4h" path="res://Assets/Background/Untitled_Artwork.png" id="9_0avsm"]
 [ext_resource type="PackedScene" uid="uid://cpyrkagpxn8wd" path="res://trex_npc.tscn" id="10_0avsm"]
-[ext_resource type="Resource" uid="uid://dd712mpgsyj2u" path="res://TrexDialogue.dialogue" id="11_dflld"]
+[ext_resource type="Resource" uid="uid://diygp4rekkdj7" path="res://DialogueScenes/treddiag2.dialogue" id="11_dflld"]
 [ext_resource type="PackedScene" uid="uid://cs7fehll0ekjl" path="res://MainScenes/tree.tscn" id="11_x8qfq"]
 [ext_resource type="PackedScene" uid="uid://bhu2uoihyyhew" path="res://MainScenes/grass.tscn" id="12_1vc8p"]
 [ext_resource type="PackedScene" uid="uid://5yv1s1qjcmlv" path="res://MainScenes/flower.tscn" id="13_lq2jo"]
@@ -93,6 +94,10 @@ dialogue_resource = ExtResource("4_2btox")
 position = Vector2(-1, -15)
 shape = SubResource("CircleShape2D_yeuv3")
 
+[node name="interactlabel" parent="Shopkeep" instance=ExtResource("8_m36gs")]
+position = Vector2(-2, -116)
+rotation = 0.0555543
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="Fishes" type="Node2D" parent="."]
@@ -130,7 +135,7 @@ scale = Vector2(1.25932, 1.05335)
 texture = ExtResource("9_0avsm")
 
 [node name="TrexNPC" parent="." instance=ExtResource("10_0avsm")]
-position = Vector2(2810, 665)
+position = Vector2(2713, 678)
 scale = Vector2(3.64683, 4.23303)
 
 [node name="Actionable" parent="TrexNPC" instance=ExtResource("3_ldcld")]
@@ -139,6 +144,11 @@ dialogue_resource = ExtResource("11_dflld")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrexNPC/Actionable"]
 scale = Vector2(3.59905, 2.99328)
 shape = SubResource("CircleShape2D_m36gs")
+
+[node name="interactlabel" parent="TrexNPC" instance=ExtResource("8_m36gs")]
+position = Vector2(-12.8879, -38.5067)
+rotation = 0.0918202
+scale = Vector2(0.579949, 0.62402)
 
 [node name="Area2D" type="Area2D" parent="."]
 

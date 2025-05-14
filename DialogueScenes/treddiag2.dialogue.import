@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://diygp4rekkdj7"
+path="res://.godot/imported/treddiag2.dialogue-b93ae392cf994a5f72ad2eb22be4f961.tres"
+
+[deps]
+
+source_file="res://DialogueScenes/treddiag2.dialogue"
+dest_files=["res://.godot/imported/treddiag2.dialogue-b93ae392cf994a5f72ad2eb22be4f961.tres"]
+
+[params]
+
+defaults=true
