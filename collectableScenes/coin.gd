@@ -6,8 +6,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 		# Hide the coin visually and disable collision
 		visible = false
-		$Area2D.monitoring = false
-		$Area2D.set_deferred("monitorable", false)
+		$Area2D.monitoring = false  # Stop monitoring for collisions
 		
 		# Play pickup sound
 		var audio = $Area2D/AudioStreamPlayer2D
@@ -18,4 +17,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			audio.connect("finished", Callable(self, "_on_sound_finished"))
 
 func _on_sound_finished():
-	queue_free()
+	queue_free()  # Remove the coin after sound finishes

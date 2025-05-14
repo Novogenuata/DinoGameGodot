@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp5i5878oq35o"]
+
+[ext_resource type="Script" uid="uid://b8m21qjgky84s" path="res://MainScenes/win_scene.gd" id="1_cftxn"]
+[ext_resource type="AudioStream" uid="uid://dfnm2gb0avlnm" path="res://Assets/Audio/06 - Victory!.wav" id="2_6ysqb"]
+[ext_resource type="Texture2D" uid="uid://ckuj6sjhs64fo" path="res://Assets/winscene2.png" id="2_cftxn"]
+
+[node name="Win_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cftxn")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.0012, 1.01168)
+texture = ExtResource("2_cftxn")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_6ysqb")
+autoplay = true
+bus = &"Music"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 96.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="MM" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Main Menu"
+
+[node name="e" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/MM" to="." method="_on_mm_pressed"]
+[connection signal="pressed" from="VBoxContainer/e" to="." method="_on_e_pressed"]
