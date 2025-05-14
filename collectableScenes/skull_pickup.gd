@@ -24,11 +24,11 @@ func spawn_bullets_around_player(player: Node2D):
 		var angle = i * TAU / num_bullets  
 		var bullet = bullet_scene.instantiate()
 
-		# Pass orbit data to the bullet
+	
 		bullet.player = player
 		bullet.angle = angle
 		bullet.radius = radius
-		bullet.rotation_speed = 2 * PI / bullet_duration  # full rotation in duration time
+		bullet.rotation_speed = 2 * PI / bullet_duration 
 
 		if bullet.has_method("activate_area_damage"):
 			bullet.activate_area_damage()

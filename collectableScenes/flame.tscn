@@ -21,7 +21,7 @@ scale = Vector2(2.86725, 2.94114)
 shape = SubResource("CircleShape2D_uecb4")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 0.5
 
 [connection signal="body_entered" from="flame" to="." method="_on_flame_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
