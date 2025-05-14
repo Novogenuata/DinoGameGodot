@@ -8,6 +8,7 @@ offsets = PackedFloat32Array(0, 0.56, 1)
 colors = PackedColorArray(0.410695, 0.731956, 0.716924, 1, 0.798185, 0.551965, 0.941005, 1, 0.419813, 0.419813, 0.419813, 1)
 
 [node name="gun3" type="Node2D"]
+z_index = 1
 script = ExtResource("1_13ry5")
 cooldown = 0.05
 use_animations = false
