@@ -10,7 +10,14 @@ func add_coin():
 	coin_count += 1
 	update_label()
 	emit_signal("coin_count_changed", coin_count)
+	_on_coin_count_changed(coin_count)
 
 func update_label():
 	if label_node:
 		label_node.text = str("Coins: ", coin_count)
+		
+
+func _on_coin_count_changed(new_count: int) -> void:
+	DialogueManager.mutate("coins", new_count)
+	
+	

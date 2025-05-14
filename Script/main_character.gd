@@ -36,6 +36,8 @@ func _ready():
 	current_health = max_health
 	spawn_hearts()
 	_update_weapon_visibility()
+	
+
 
 func get_input():
 	var input_dir = Input.get_vector("left", "right", "up", "down")

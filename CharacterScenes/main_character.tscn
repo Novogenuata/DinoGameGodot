@@ -184,6 +184,7 @@ shape = SubResource("CapsuleShape2D_kuv27")
 unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 
 [node name="Direction" type="Marker2D" parent="."]
 position = Vector2(-56, 0)
