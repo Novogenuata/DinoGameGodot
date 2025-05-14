@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bl4008rq2b8p0"]
+[gd_scene load_steps=28 format=3 uid="uid://bl4008rq2b8p0"]
 
 [ext_resource type="Script" uid="uid://1axavau2ungs" path="res://MainScenes/Main.gd" id="1_0avsm"]
 [ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="1_52se3"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://i3vry1botv1y" path="res://MainScenes/fish.tscn" id="8_3wtxv"]
 [ext_resource type="Texture2D" uid="uid://bqm8gh4n5ra4h" path="res://Assets/Background/Untitled_Artwork.png" id="9_0avsm"]
 [ext_resource type="PackedScene" uid="uid://cpyrkagpxn8wd" path="res://trex_npc.tscn" id="10_0avsm"]
+[ext_resource type="Resource" uid="uid://dd712mpgsyj2u" path="res://TrexDialogue.dialogue" id="11_dflld"]
 [ext_resource type="PackedScene" uid="uid://cs7fehll0ekjl" path="res://MainScenes/tree.tscn" id="11_x8qfq"]
 [ext_resource type="PackedScene" uid="uid://bhu2uoihyyhew" path="res://MainScenes/grass.tscn" id="12_1vc8p"]
 [ext_resource type="PackedScene" uid="uid://5yv1s1qjcmlv" path="res://MainScenes/flower.tscn" id="13_lq2jo"]
@@ -44,6 +45,8 @@ radius = 92.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3wtxv"]
 radius = 70.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m36gs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6swf"]
 size = Vector2(20, 73.1557)
@@ -129,6 +132,13 @@ texture = ExtResource("9_0avsm")
 [node name="TrexNPC" parent="." instance=ExtResource("10_0avsm")]
 position = Vector2(2810, 665)
 scale = Vector2(3.64683, 4.23303)
+
+[node name="Actionable" parent="TrexNPC" instance=ExtResource("3_ldcld")]
+dialogue_resource = ExtResource("11_dflld")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrexNPC/Actionable"]
+scale = Vector2(3.59905, 2.99328)
+shape = SubResource("CircleShape2D_m36gs")
 
 [node name="Area2D" type="Area2D" parent="."]
 
