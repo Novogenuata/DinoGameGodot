@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://i4jb72gn7o54"]
 
 [ext_resource type="Texture2D" uid="uid://d160mmc3bkg1k" path="res://Assets/gate.png" id="1_cr0yp"]
-[ext_resource type="Script" uid="uid://dqjg6c33k3p2h" path="res://Script/gate.gd" id="2_x7gvh"]
+[ext_resource type="Script" uid="uid://dksi5e3dp5lj6" path="res://MainScenes/gatelogic.gd" id="1_x7gvh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x7gvh"]
 atlas = ExtResource("1_cr0yp")
@@ -30,7 +30,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"closed",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -41,25 +41,26 @@ animations = [{
 }],
 "loop": true,
 "name": &"open",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7gvh"]
-size = Vector2(84.9323, 20)
+size = Vector2(29.1643, 121.275)
 
 [node name="gate" type="Node2D"]
+script = ExtResource("1_x7gvh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -1
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_lvj0e")
 animation = &"open"
 autoplay = "closed"
-frame_progress = 0.802444
-script = ExtResource("2_x7gvh")
 
-[node name="hitbox" type="Area2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(-6.542, 11.3851)
-rotation = 0.708049
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(60, -19)
+rotation = 1.57079
+scale = Vector2(3.16708, 1.40178)
 shape = SubResource("RectangleShape2D_x7gvh")
