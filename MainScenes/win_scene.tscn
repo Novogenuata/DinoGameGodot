@@ -41,4 +41,9 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Main Menu"
 
+[node name="e" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
 [connection signal="pressed" from="VBoxContainer/MM" to="." method="_on_mm_pressed"]
+[connection signal="pressed" from="VBoxContainer/e" to="." method="_on_e_pressed"]
