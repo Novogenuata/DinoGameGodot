@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://chi2kxrp7cv33"]
+
+[ext_resource type="Texture2D" uid="uid://fr4pk4eiqypp" path="res://Assets/littleflame.png" id="1_a2cjv"]
+[ext_resource type="Script" uid="uid://7ri82c6nqe0r" path="res://collectableScenes/flame.gd" id="1_uecb4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uecb4"]
+
+[node name="flame" type="Node2D"]
+script = ExtResource("1_uecb4")
+
+[node name="flame" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="flame"]
+texture_filter = 1
+texture = ExtResource("1_a2cjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="flame"]
+scale = Vector2(2.86725, 2.94114)
+shape = SubResource("CircleShape2D_uecb4")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+
+[connection signal="body_entered" from="flame" to="." method="_on_flame_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

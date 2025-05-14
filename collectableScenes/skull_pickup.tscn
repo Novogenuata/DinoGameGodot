@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://4fqy5mnmerwv"]
+[gd_scene load_steps=7 format=3 uid="uid://4fqy5mnmerwv"]
 
+[ext_resource type="Script" uid="uid://cpe442owj0q7v" path="res://collectableScenes/skull_pickup.gd" id="1_778em"]
 [ext_resource type="Texture2D" uid="uid://blfuomni03hol" path="res://Assets/skullpickup.png" id="1_qehrr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_778em"]
@@ -28,13 +29,17 @@ animations = [{
 radius = 29.0172
 
 [node name="SkullPickup" type="Node2D"]
+script = ExtResource("1_778em")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_frvnk")
-frame_progress = 0.847959
+autoplay = "default"
+frame_progress = 0.348155
 
 [node name="Hitbox" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_38fpe")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

@@ -15,6 +15,10 @@ extends Node
 
 @onready var level_label = %LevelLabel
 
+
+const skull_scene = preload("res://collectableScenes/skull_pickup.tscn")
+
+
 const slow_slime = preload("res://CharacterScenes/slow_slime.tscn")
 const fast_slime = preload("res://CharacterScenes/fast_slime.tscn")
 const tank_slime = preload("res://CharacterScenes/tank_slime.tscn")
@@ -63,11 +67,24 @@ func spawn_slime(slime):
 	if slime_instance.has_method("set_difficulty"):
 		slime_instance.set_difficulty(difficulty_multiplier)
 
+func spawn_skull():
+	var skull_instance = skull_scene.instantiate()
+	get_tree().current_scene.add_child(skull_instance)
 	
+	var spawns = spawnpoints.get_children()
+	if spawns.size() > 0:
+		var random_spawn = spawns[randi() % spawns.size()]
+		skull_instance.global_position = random_spawn.global_position
+
 func cooldown():
 	timer.start()
 	await timer.timeout
 	new_level()
+	if level % 2 ==0:
+		var num_skulls = randi_range(1, 2) 
+		for i in range(num_skulls):
+			spawn_skull()
+
 	
 func _on_coin_count_changed(count: int):
 	if count > max_coins:

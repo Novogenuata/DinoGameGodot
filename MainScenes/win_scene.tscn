@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dp5i5878oq35o"]
 
 [ext_resource type="Script" uid="uid://b8m21qjgky84s" path="res://MainScenes/win_scene.gd" id="1_cftxn"]
-[ext_resource type="Texture2D" uid="uid://ly64bld3pds6" path="res://Assets/win.png" id="1_g0wpd"]
 [ext_resource type="AudioStream" uid="uid://dfnm2gb0avlnm" path="res://Assets/Audio/06 - Victory!.wav" id="2_6ysqb"]
+[ext_resource type="Texture2D" uid="uid://ckuj6sjhs64fo" path="res://Assets/winscene2.png" id="2_cftxn"]
 
 [node name="Win_scene" type="Control"]
 layout_mode = 3
@@ -17,8 +17,8 @@ script = ExtResource("1_cftxn")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(0.538516, 0.4)
-texture = ExtResource("1_g0wpd")
+scale = Vector2(1.0012, 1.01168)
+texture = ExtResource("2_cftxn")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_6ysqb")
