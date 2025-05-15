@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://domf0yrtfc88b"]
+[gd_scene load_steps=6 format=3 uid="uid://domf0yrtfc88b"]
 
 [ext_resource type="Script" uid="uid://fsq53xpecaly" path="res://Script/main_menu.gd" id="1_rqe8y"]
 [ext_resource type="Texture2D" uid="uid://c51i808o31cpe" path="res://Assets/Background/maimenubackground.png" id="2_rqe8y"]
 [ext_resource type="Theme" uid="uid://ct3gsjqfkb4hm" path="res://Assets/themes/vintagetheme.tres" id="3_qnbo1"]
 [ext_resource type="AudioStream" uid="uid://b66bjvgogdj6s" path="res://Assets/Audio/the_field_of_dreams (1).mp3" id="4_gnxq4"]
+[ext_resource type="Texture2D" uid="uid://baua3oy66nedl" path="res://Assets/Background/DINOTITLE.png" id="4_w41gr"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -13,8 +14,8 @@ script = ExtResource("1_rqe8y")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="background" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(575, 335.5)
-scale = Vector2(0.527778, 0.40679)
+position = Vector2(573, 326)
+scale = Vector2(0.543441, 0.417469)
 texture = ExtResource("2_rqe8y")
 
 [node name="elements" type="MarginContainer" parent="CanvasLayer"]
@@ -36,16 +37,21 @@ theme = ExtResource("3_qnbo1")
 
 [node name="play" type="Button" parent="CanvasLayer/elements/buttons"]
 layout_mode = 2
-text = "menu_play"
+text = "Play"
 
 [node name="settings" type="Button" parent="CanvasLayer/elements/buttons"]
 layout_mode = 2
-text = "menu_settings
+text = "Settings
 "
 
 [node name="exit" type="Button" parent="CanvasLayer/elements/buttons"]
 layout_mode = 2
-text = "menu_quit"
+text = "Exit"
+
+[node name="Dinotitle" type="Sprite2D" parent="CanvasLayer/elements/buttons"]
+position = Vector2(0, -46.5)
+scale = Vector2(0.217494, 0.223504)
+texture = ExtResource("4_w41gr")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_gnxq4")

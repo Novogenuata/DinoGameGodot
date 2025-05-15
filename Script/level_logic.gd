@@ -32,26 +32,31 @@ func _process(delta: float):
 	self.global_position = player.global_position
 
 func new_level():
-	enemy_interval.wait_time = 1.2
-	enemies_left = 2 * level
+	enemy_interval.wait_time = clamp(1.2 - (level * 0.05), 0.2, 1.2)
+	enemies_left = int(level * 3.5)
 	level_label.text = "Level: %d" % level
 	
 	spawn_enemies()
+
 	
 func spawn_enemies():
 	while enemies_left > 0:
-		var enemy_rng = randi_range(1, level)
-		match enemy_rng:
-			1:
-				spawn_slime(slow_slime)
-			2:
-				spawn_slime(fast_slime)
-			3:
-				spawn_slime(tank_slime)
-		enemies_left -= 1
-		print(enemies_left)
+		var batch = min(3, enemies_left) 
+		for i in range(batch):
+			var enemy_rng = randi_range(1, level)
+			match enemy_rng:
+				1:
+					spawn_slime(slow_slime)
+				2:
+					spawn_slime(fast_slime)
+				3:
+					spawn_slime(tank_slime)
+			enemies_left -= 1
+			print("Enemies left: ", enemies_left)
+
 		enemy_interval.start()
 		await enemy_interval.timeout
+
 	level += 1
 	cooldown()
 	
@@ -80,10 +85,9 @@ func cooldown():
 	timer.start()
 	await timer.timeout
 	new_level()
-	if level % 2 ==0:
-		var num_skulls = randi_range(1, 2) 
-		for i in range(num_skulls):
-			spawn_skull()
+	var num_skulls = int(level * 0.5) + randi_range(1, 2)
+	for i in range(num_skulls):
+		spawn_skull()
 
 	
 func _on_coin_count_changed(count: int):

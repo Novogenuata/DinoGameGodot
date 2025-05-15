@@ -16,7 +16,7 @@ func update_label():
 	if label_node:
 		label_node.text = str("Coins: ", coin_count)
 		
-	if coin_count >= 300:
+	if coin_count >= 200:
 	
 		SceneManager.change_scene("res://MainScenes/win_scene.tscn")
 
