@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ysngkd6bb7yx"]
+[gd_scene load_steps=11 format=3 uid="uid://ysngkd6bb7yx"]
 
 [ext_resource type="Script" uid="uid://daucxt0wkexko" path="res://Script/water_scene.gd" id="1_o43j3"]
 [ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="1_wib7b"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cchdwf3mwrual" path="res://MainScenes/water_gun.tscn" id="4_dwd6w"]
 [ext_resource type="PackedScene" uid="uid://i3vry1botv1y" path="res://MainScenes/fish.tscn" id="5_0gxso"]
 [ext_resource type="PackedScene" uid="uid://bagtlegoc6rlv" path="res://collectableScenes/shiny.tscn" id="6_dfkbc"]
+[ext_resource type="AudioStream" uid="uid://bts3i4036opu4" path="res://Assets/Audio/Temple in the A b y s s.mp3" id="7_8s6b1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_unjqi"]
 radius = 68.1836
@@ -52,6 +53,7 @@ position = Vector2(-10, 218)
 scale = Vector2(1.48, 1.57105)
 
 [node name="fish" parent="." instance=ExtResource("5_0gxso")]
+z_index = -1
 position = Vector2(374, 239)
 scale = Vector2(4.73794, 2.15361)
 
@@ -73,5 +75,11 @@ shape = SubResource("RectangleShape2D_0gxso")
 
 [node name="shiny" parent="." instance=ExtResource("6_dfkbc")]
 position = Vector2(377, 243)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_8s6b1")
+autoplay = true
+max_distance = 9.22337e+18
+bus = &"Music"
 
 [connection signal="body_entered" from="exitgate" to="." method="_on_exitgate_body_entered"]

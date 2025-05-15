@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcdti77j35ac5"]
+
+[ext_resource type="Texture2D" uid="uid://bi1l4lm7r3ly6" path="res://Assets/waterdrop.png" id="1_hqv2m"]
+[ext_resource type="Script" uid="uid://d4eo5gldjgt5m" path="res://Script/waterbullet.gd" id="1_no4pc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_no4pc"]
+radius = 4.0
+height = 51.9941
+
+[node name="waterbullet" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_no4pc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1, 10)
+rotation = -0.0784035
+texture = ExtResource("1_hqv2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = -1
+position = Vector2(4, -1)
+rotation = -1.54256
+scale = Vector2(5.14668, 1)
+shape = SubResource("CapsuleShape2D_no4pc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
