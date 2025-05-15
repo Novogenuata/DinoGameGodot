@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://daucxt0wkexko" path="res://Script/water_scene.gd" id="1_o43j3"]
 [ext_resource type="PackedScene" uid="uid://hociavgdvmp8" path="res://CharacterScenes/main_character.tscn" id="1_wib7b"]
-[ext_resource type="Texture2D" uid="uid://df2cstplhaiwd" path="res://Assets/Background/Water.jpeg" id="2_ixydh"]
+[ext_resource type="Texture2D" uid="uid://c773pwi7ubw26" path="res://Assets/waterbackground.png" id="2_8s6b1"]
 [ext_resource type="PackedScene" uid="uid://cchdwf3mwrual" path="res://MainScenes/water_gun.tscn" id="4_dwd6w"]
 [ext_resource type="PackedScene" uid="uid://i3vry1botv1y" path="res://MainScenes/fish.tscn" id="5_0gxso"]
 [ext_resource type="PackedScene" uid="uid://bagtlegoc6rlv" path="res://collectableScenes/shiny.tscn" id="6_dfkbc"]
@@ -23,13 +23,15 @@ script = ExtResource("1_o43j3")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.9, 0.9)
+motion_mirroring = Vector2(120, 120)
 
-[node name="background" type="Sprite2D" parent="ParallaxBackground"]
-z_index = -1
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_filter = 1
-position = Vector2(553.5, 273)
-scale = Vector2(23.6654, -17.4634)
-texture = ExtResource("2_ixydh")
+texture_repeat = 2
+texture = ExtResource("2_8s6b1")
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 3000)
 
 [node name="exitgate" type="Area2D" parent="."]
 position = Vector2(374, 239)
