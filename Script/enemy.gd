@@ -3,6 +3,9 @@ extends CharacterBody2D
 @export var health: int
 @export var movement_speed: int
 
+var dead: bool = false
+
+
 var base_health: int
 var base_movement_speed: int
 
@@ -71,11 +74,17 @@ func _on_attack_timeout():
 	anim_sprite.play("default")
 
 func take_damage(amount: int):
+	if dead:
+		return
 	health -= amount
 	if health <= 0:
-		call_deferred("_die")
+		_die()
 
 func _die():
+	if dead:
+		return
+	dead = true
+	
 	var explosion_instance = bugExplosionScene.instantiate()
 	get_parent().add_child(explosion_instance)
 	explosion_instance.global_position = global_position
@@ -84,14 +93,12 @@ func _die():
 	get_tree().get_current_scene().add_child(coin_instance)
 	coin_instance.global_position = global_position
 
-
 	if randi() % 100 < 5:
 		var health_instance = HealthPickup.instantiate()
 		get_parent().add_child(health_instance)
 		health_instance.global_position = global_position
 
 	queue_free()
-
 	
 func _on_player_died() -> void:
 	queue_free()
