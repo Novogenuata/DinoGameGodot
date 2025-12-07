@@ -4,7 +4,7 @@ Playable on itch.io: https://novogen.itch.io/dino-game
 
 
 A simple Vampire-Survivors game with 2 different levels. 
-Fully drawn and animated by me, The menu UI and anything relating to the sound was coded by my teammate. 
+Fully drawn and animated by me, The menu UI and anything relating to the sound was coded by my teammate. <br>
 <img width="779" height="506" alt="image" src="https://github.com/user-attachments/assets/8c9d01f3-8e4a-4326-b594-ea315a217d65" />
 <img width="804" height="510" alt="image" src="https://github.com/user-attachments/assets/69709ed7-4afd-4026-b5c5-43c31854a670" />
 <img width="701" height="467" alt="image" src="https://github.com/user-attachments/assets/81d3d990-fc17-4fd6-99af-da8f75f9e02b" />
